@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="원하는 차량을 선택하고 오토지니에서 장기렌트·리스 조건을 빠르게 비교해 보세요.">
+  <title>오토지니 | 장기렌트·리스 전 차종 비교</title>
+
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0, 0);
+  </script>
+  
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layer.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <div class="landing-loader" id="landingLoader" role="status" aria-live="polite" aria-label="견적 화면을 준비하고 있습니다.">
+    <div class="loader-content">
+      <div class="loader-copy">
+        <p>AUTOGENIE</p>
+        <h2>내 차 견적을<br>간편하게 시작하세요.</h2>
+        <span>원하는 차량과 이용조건을<br>차례대로 선택할 수 있습니다.</span>
+      </div>
+      <div class="loader-symbol" aria-hidden="true">
+        <i>A</i>
+        <b></b><b></b><b></b>
+      </div>
+      <div class="loader-status">전국 최저가 견적을 불러오는 중</div>
+    </div>
+  </div>
+
+
+  <main class="wizard-page" id="top">
+    <header class="wizard-header">
+      <a class="brand-mark" href="#top" aria-label="오토지니 홈">
+        <span class="brand-symbol">A</span>
+        <span>AUTOGENIE</span>
+      </a>
+      <button type="button" class="header-caption header-vehicle-search-button" id="openVehicleSearch" aria-haspopup="dialog" aria-controls="vehicleSearchModal">
+        <span class="header-vehicle-search-button__desktop">차량 통합검색</span>
+        <span class="header-vehicle-search-button__mobile">차량 검색</span>
+      </button>
+    </header>
+
+    <section class="wizard-hero">
+      <p>국산·수입 전 차종 비교</p>
+      <h1>내가 원하는 차량,<br><strong>조건까지 한 번에 선택하세요.</strong></h1>
+      <span>전국 최저가 맞춤 견적을 받아보실 수 있습니다.</span>
+      <div class="wizard-hero-visual" aria-hidden="true">
+        <img src="images/car-img.png" alt="" class="wizard-hero-visual__image">
+      </div>
+    </section>
+
+    <section class="estimate-shell" id="estimate">
+      <ol class="step-indicator progress-1" id="stepIndicator" aria-label="견적 신청 단계">
+        <li class="active">
+          <button type="button" data-step-tab="1"><b>01</b><span>차량 선택</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="2" disabled><b>02</b><span>세부모델</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="3" disabled><b>03</b><span>이용조건</span></button>
+        </li>
+        <li>
+          <button type="button" data-step-tab="4" disabled><b>04</b><span>정보입력</span></button>
+        </li>
+      </ol>
+
+      <form id="estimateForm" novalidate>
+        <div id="wizardContent">
+          <div class="wizard-step step-one wizard-static-fallback">
+            <div class="step-heading">
+              <span>STEP 01</span>
+              <h2>원하는 차량을 선택해 주세요.</h2>
+              <p>수입차 브랜드부터 차량과 색상까지 순서대로 선택할 수 있습니다.</p>
+            </div>
+
+            <fieldset class="option-block">
+              <legend><b>1</b> 브랜드</legend>
+              <p class="empty-selection-guide">수입차 브랜드를 불러오는 중입니다.</p>
+            </fieldset>
+
+            <fieldset class="option-block is-disabled-block">
+              <legend><b>2</b> 차량</legend>
+              <p class="empty-selection-guide">브랜드를 먼저 선택해 주세요.</p>
+            </fieldset>
+
+            <div class="wizard-car-card is-empty">
+              <div class="wizard-car-title">
+                <div>
+                  <small>SELECT VEHICLE</small>
+                  <strong>차량을 선택해 주세요</strong>
+                </div>
+              </div>
+
+              <div class="wizard-car-image">
+                <div class="vehicle-empty-visual">차량 선택 후 이미지가 표시됩니다.</div>
+              </div>
+
+              <div class="paint-block is-disabled-block">
+                <div class="paint-label"><b>3</b> 외장 색상</div>
+                <p class="empty-selection-guide">차량을 먼저 선택해 주세요.</p>
+              </div>
+            </div>
+          </div>
+</div>
+        <div class="wizard-spacer"></div>
+        <div class="wizard-actions" id="wizardActions">
+          <button class="back-button" id="backButton" type="button" aria-label="이전 단계" hidden>
+            <svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5"></path>
+            </svg>
+          </button>
+          <div class="wizard-actions__group" id="actionGroup">
+            <button class="consult-button" id="consultButton" type="button" hidden>상담 후 결정</button>
+            <button class="next-button" id="nextButton" type="button">
+              다음 단계
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+
+
+  
+
+  <dialog class="vehicle-search-modal" id="vehicleSearchModal" aria-labelledby="vehicleSearchModalTitle">
+    <div class="vehicle-search-modal__panel">
+      <div class="vehicle-search-modal__header">
+        <div>
+          <h2 id="vehicleSearchModalTitle">차량 통합검색</h2>
+          <p>차량명을 검색하면 수입차 브랜드와 차량이 자동으로 선택됩니다.</p>
+        </div>
+        <button type="button" class="vehicle-search-modal__close" id="closeVehicleSearch" aria-label="차량 검색 닫기">×</button>
+      </div>
+      <div class="vehicle-search-modal__body">
+        <div class="vehicle-search-field">
+          <input type="search" id="globalVehicleSearch" placeholder="예: 아반떼, 그랑 콜레오스, 모델Y" autocomplete="off" aria-controls="globalVehicleSearchList">
+          <button type="button" class="vehicle-search-clear" id="globalVehicleSearchClear" aria-label="검색어 지우기" hidden>×</button>
+        </div>
+        <p class="vehicle-search-result" id="globalVehicleSearchResult" aria-live="polite">차량명을 입력해 주세요.</p>
+        <div class="vehicle-search-list integrated-vehicle-search__list" id="globalVehicleSearchList" hidden></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="privacy-modal" id="privacyModal" aria-labelledby="privacyModalTitle">
+      <div class="privacy-modal__inner">
+        <div class="privacy-modal__header">
+          <h2 id="privacyModalTitle">개인정보 수집 및 이용 동의</h2>
+          <button type="button" class="privacy-modal__close" data-privacy-close aria-label="개인정보 팝업 닫기">×</button>
+        </div>
+
+        <div class="privacy-modal__content">
+          <section>
+            <h3>개인정보취급방침은 다음과 같은 내용을 담고 있습니다.</h3>
+          </section>
+
+          <section>
+            <h3>가. 수집하는 개인정보 항목 및 수집방법</h3>
+            <p>신청자 이름, 핸드폰</p>
+          </section>
+
+          <section>
+            <h3>나. 개인정보의 수집 및 이용목적</h3>
+            <p>영업 담당자들의 전화 상담</p>
+          </section>
+
+          <section>
+            <h3>다. 수집한 개인정보의 보유 및 이용기간</h3>
+            <p>원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</p>
+          </section>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__confirm" data-privacy-close>확인</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="wizard-footer">
+      <div class="footer-brand">
+        <strong>AUTOGENIE</strong>
+        <p>장기렌트·리스, 좋은 조건을 찾는 가장 쉬운 방법</p>
+      </div>
+
+      <dl class="company-info">
+        <div><dt>상호명</dt><dd>에이지기획 주식회사</dd></div>
+        <div><dt>대표자</dt><dd>이태우</dd></div>
+        <div><dt>사업자등록번호</dt><dd>438-87-03620</dd></div>
+        <div><dt>이메일</dt><dd><a href="mailto:chayogi8934@naver.com">chayogi8934@naver.com</a></dd></div>
+        <div class="wide"><dt>주소</dt><dd>인천광역시 남동구 남동대로 687 3층(기원빌딩)</dd></div>
+        <div><dt>대표전화</dt><dd><a href="tel:1600-3481">1600-3481</a></dd></div>
+        <div><dt>상담시간</dt><dd>평일 09:00 - 18:00 상담 가능</dd></div>
+      </dl>
+
+      <small class="footer-copyright">© AUTOGENIE. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
