@@ -7177,80 +7177,40 @@ const vehicleCatalog = [
   }
 
   function scrollToNextSelection(selector, block = "start", viewportTop = null) {
-    const target = content.querySelector(selector) || document.querySelector(selector);
-    if (!target) return;
-
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    let hasStarted = false;
+    // 렌더 직후에는 레이아웃 높이가 한두 프레임 동안 변할 수 있으므로
+    // 목표 요소를 매번 다시 찾고 실제 좌표로 이동합니다.
+    const moveToTarget = () => {
+      const target = content.querySelector(selector) || document.querySelector(selector);
+      if (!target) return;
 
-    const startSmoothScroll = () => {
-      if (hasStarted) return;
-      hasStarted = true;
-
-      // 렌더링 중 유지했던 높이를 실제 이동 직전에 해제합니다.
       content.style.minHeight = "";
 
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          const header = document.querySelector(".site-header");
-          const headerHeight = header
-            ? header.getBoundingClientRect().height
-            : 0;
+      const header = document.querySelector(".wizard-header") || document.querySelector(".site-header");
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const rect = target.getBoundingClientRect();
+      const targetTop = window.scrollY + rect.top;
 
-          const rect = target.getBoundingClientRect();
-          const targetTop = window.scrollY + rect.top;
-          const viewportHeight = window.innerHeight;
-          const targetHeight = rect.height;
+      const destination = viewportTop !== null
+        ? targetTop - Number(viewportTop)
+        : targetTop - headerHeight - 8;
 
-          const destination = viewportTop !== null
-            ? targetTop - Math.min(
-                Number(viewportTop),
-                viewportHeight * 0.42
-              )
-            : block === "center"
-              ? targetTop - Math.max(
-                  headerHeight + 12,
-                  (viewportHeight - targetHeight) / 2
-                )
-              : targetTop - headerHeight - 12;
-
-          window.scrollTo({
-            top: Math.max(0, destination),
-            left: 0,
-            behavior: prefersReducedMotion ? "auto" : "smooth"
-          });
-        });
+      window.scrollTo({
+        top: Math.max(0, destination),
+        left: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth"
       });
     };
 
-    const loadingImages = [...target.querySelectorAll("img")]
-      .filter(image => !image.complete);
-
-    if (!loadingImages.length) {
-      startSmoothScroll();
-      return;
-    }
-
-    let remaining = loadingImages.length;
-
-    const finishImage = () => {
-      remaining -= 1;
-
-      if (remaining <= 0) {
-        startSmoothScroll();
-      }
-    };
-
-    loadingImages.forEach(image => {
-      image.addEventListener("load", finishImage, { once: true });
-      image.addEventListener("error", finishImage, { once: true });
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(moveToTarget);
     });
 
-    // 이미지 로딩이 지연되는 경우에도 한 번만 자연스럽게 이동합니다.
-    window.setTimeout(startSmoothScroll, 700);
+    // 모바일 브라우저의 늦은 레이아웃 보정까지 반영합니다.
+    window.setTimeout(moveToTarget, 120);
   }
 
   function enablePaintDragScroll(scroller) {
@@ -7377,11 +7337,11 @@ const vehicleCatalog = [
         const key = group.dataset.group;
         const value = button.dataset.value;
 
-        if (key === "market") {
-          // 클릭된 버튼이 DOM 교체 과정에서 사라질 때 브라우저가
-          // 포커스 위치를 기준으로 위로 이동하지 않도록 먼저 해제합니다.
-          button.blur();
+        // 재렌더링으로 선택 버튼이 사라지기 전에 포커스를 해제해
+        // 브라우저가 이전 버튼 위치로 스크롤을 되돌리지 않게 합니다.
+        button.blur();
 
+        if (key === "market") {
           const marketChanged = state.market !== value;
           state.market = value;
 
@@ -7403,7 +7363,7 @@ const vehicleCatalog = [
         render({ preserveScroll: key === "market" });
 
         if (key === "market") {
-          scrollToNextSelection('[data-option-section="brand"]', "start", 360);
+          scrollToNextSelection('[data-option-section="brand"]', "start");
         } else if (key === "usage") {
           scrollToNextSelection('[data-option-section="initialCost"]');
         } else if (key === "initialCost") {
@@ -7817,27 +7777,13 @@ const vehicleCatalog = [
   }
 
   function moveToConsultStep() {
-    if (state.step === 1) {
-      if (!state.brandName) {
-        showValidation("브랜드를 선택해 주세요.");
-        return;
-      }
-      if (!state.carName) {
-        showValidation("차량을 선택해 주세요.");
-        return;
-      }
-    }
-
-    // 1·2단계의 미선택 항목은 상담 단계에서 결정하도록 기본값을 채웁니다.
+    // 첫 화면에서 차량을 선택하지 않았더라도 이용조건 단계로 바로 이동합니다.
+    // 미선택 차량과 세부모델은 최종 신청 내용에서 상담 후 결정으로 표시됩니다.
     if (!state.trim) state.trim = "상담 후 결정";
     if (!state.subTrim) state.subTrim = "";
-    state.usage = "상담 후 결정";
-    state.initialCost = "상담 후 결정";
-    state.rate = "";
-    state.mileage = "상담 후 결정";
 
-    state.step = 4;
-    state.maxReachedStep = 4;
+    state.step = 3;
+    state.maxReachedStep = Math.max(state.maxReachedStep, 3);
     render();
     scrollToEstimate();
   }
