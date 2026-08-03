@@ -6791,8 +6791,8 @@ const vehicleCatalog = [
       <div class="wizard-step step-one">
         <div class="step-heading">
           <span>STEP 01</span>
-          <h2>원하는 차량을 선택해 주세요.</h2>
-          <p>수입차 브랜드부터 차량과 색상까지 순서대로 선택할 수 있습니다.</p>
+          <h2>원하는 수입차를 선택해 주세요.</h2>
+          <p>브랜드와 차량, 외장 색상을 순서대로 선택할 수 있습니다.</p>
         </div>
 
         <fieldset class="option-block" data-option-section="brand">

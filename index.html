@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="원하는 차량을 선택하고 오토지니에서 장기렌트·리스 조건을 빠르게 비교해 보세요.">
-  <title>오토지니 | 장기렌트·리스 전 차종 비교</title>
+  <title>오토지니 IMPORT | 수입차 장기렌트·리스 견적 비교</title>
 
   <script>
     if ("scrollRestoration" in history) {
@@ -43,20 +43,23 @@
     <header class="wizard-header">
       <a class="brand-mark" href="#top" aria-label="오토지니 홈">
         <span class="brand-symbol">A</span>
-        <span>AUTOGENIE</span>
+        <span class="brand-copy">
+          <strong class="brand-copy__name">AUTOGENIE</strong>
+          <small class="brand-copy__sub">IMPORT</small>
+        </span>
       </a>
       <button type="button" class="header-caption header-vehicle-search-button" id="openVehicleSearch" aria-haspopup="dialog" aria-controls="vehicleSearchModal">
-        <span class="header-vehicle-search-button__desktop">차량 통합검색</span>
+        <span class="header-vehicle-search-button__desktop">수입차 검색</span>
         <span class="header-vehicle-search-button__mobile">차량 검색</span>
       </button>
     </header>
 
     <section class="wizard-hero">
-      <p>국산·수입 전 차종 비교</p>
-      <h1>내가 원하는 차량,<br><strong>조건까지 한 번에 선택하세요.</strong></h1>
+      <p>수입차 장기렌트·리스 맞춤 견적</p>
+      <h1>원하는 수입차,<br><strong>조건까지 한 번에 선택하세요.</strong></h1>
       <span>전국 최저가 맞춤 견적을 받아보실 수 있습니다.</span>
       <div class="wizard-hero-visual" aria-hidden="true">
-        <img src="images/car-img.png" alt="" class="wizard-hero-visual__image">
+        <img src="images/car-img-bg.png" alt="" class="wizard-hero-visual__image">
       </div>
     </section>
 
@@ -81,8 +84,8 @@
           <div class="wizard-step step-one wizard-static-fallback">
             <div class="step-heading">
               <span>STEP 01</span>
-              <h2>원하는 차량을 선택해 주세요.</h2>
-              <p>수입차 브랜드부터 차량과 색상까지 순서대로 선택할 수 있습니다.</p>
+              <h2>원하는 수입차를 선택해 주세요.</h2>
+              <p>브랜드와 차량, 외장 색상을 순서대로 선택할 수 있습니다.</p>
             </div>
 
             <fieldset class="option-block">
@@ -142,7 +145,7 @@
     <div class="vehicle-search-modal__panel">
       <div class="vehicle-search-modal__header">
         <div>
-          <h2 id="vehicleSearchModalTitle">차량 통합검색</h2>
+          <h2 id="vehicleSearchModalTitle">수입차 검색</h2>
           <p>차량명을 검색하면 수입차 브랜드와 차량이 자동으로 선택됩니다.</p>
         </div>
         <button type="button" class="vehicle-search-modal__close" id="closeVehicleSearch" aria-label="차량 검색 닫기">×</button>

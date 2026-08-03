@@ -27,6 +27,26 @@
     font-weight: 800;
     display: inline-flex;
 }
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+.brand-copy__name {
+    color: #17345c;
+    font-size: 1rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+}
+.brand-copy__sub {
+    color: #2f6bff;
+    margin-top: 4px;
+    font-size: 0.8125rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+}
 .brand-symbol {
     background: var(--blue);
     color: #fff;
@@ -2045,7 +2065,7 @@ body:has(.wizard-page) {
             transparent 58%
         ),
         #ffffff;
-    padding: 38px 22px 40px;
+    padding: 38px 22px 28px;
     position: relative;
     overflow: hidden;
 }
@@ -2096,23 +2116,39 @@ body:has(.wizard-page) {
 .wizard-hero-visual {
     position: relative;
     z-index: 1;
-    width: min(100%, 760px);
-    margin: 10px auto 0;
+    width: calc(100% + 44px);
+    max-width: none;
+    aspect-ratio: 1000 / 390;
+    margin: 2px -22px 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+.wizard-hero-visual::before,
+.wizard-hero-visual::after {
+    display: none;
 }
 .wizard-hero-visual__image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 59%;
+    transform: translateX(-3px) scale(1.15);
+    transform-origin: center center;
     margin: 0 auto;
-    filter: drop-shadow(0 18px 24px rgba(17, 39, 71, 0.1));
 }
 @media (max-width: 640px) {
     .wizard-hero {
-        padding: 34px 18px 58px;
+        padding: 34px 18px 20px;
     }
     .wizard-hero-visual {
-        width: min(100%, 560px);
-        margin-top: 22px;
+        width: calc(100% + 36px);
+        aspect-ratio: 1000 / 490;
+        margin: 2px -18px 0;
+    }
+    .wizard-hero-visual__image {
+        object-position: center 58%;
+        transform: scale(1.08);
     }
 }
 .estimate-shell {
@@ -5918,13 +5954,11 @@ body.loader-active {
     }
 }
 
-
 /* 동적 렌더링 시 브라우저가 이전 버튼 위치로 스크롤을 되돌리는 현상 방지 */
 #wizardContent,
 #wizardContent .option-block {
     overflow-anchor: none;
 }
-
 
 /* 차량 구분 선택 후 DOM 재구성 시 브라우저 자동 스크롤 앵커 방지 */
 #wizardContent {
