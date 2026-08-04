@@ -6976,7 +6976,7 @@ const vehicleCatalog = [
         <div class="estimate-summary">
           <h3>선택한 견적 조건</h3>
           <dl>
-            <div><dt>차량</dt><dd>${state.brandName} ${state.carName} · ${currentPaint()?.name || "상담 후 결정"}</dd></div>
+            <div><dt>차량</dt><dd>${state.brandName && state.carName ? `${state.brandName} ${state.carName}` : "상담 후 결정"} · ${currentPaint()?.name || "상담 후 결정"}</dd></div>
             <div><dt>세부모델</dt><dd>${state.trim || "상담 후 결정"}${state.subTrim ? ` · ${state.subTrim}` : ""}</dd></div>
             <div><dt>이용조건</dt><dd>${state.usage || "상담 후 결정"} · ${state.initialCost || "상담 후 결정"}${!["초기비용 0원", "상담 후 결정"].includes(state.initialCost) && state.rate ? ` ${state.rate}` : ""}</dd></div>
             <div><dt>주행거리</dt><dd>${state.mileage || "상담 후 결정"}</dd></div>
@@ -7043,9 +7043,26 @@ const vehicleCatalog = [
 
   function renderComplete() {
     const paint = currentPaint();
-    const initialCostText = ["초기비용 0원", "상담 후 결정"].includes(state.initialCost)
-      ? state.initialCost
-      : `${state.initialCost}${state.rate ? ` ${state.rate}` : ""}`;
+    const pendingText = "상담 후 결정";
+    const brandText = state.brandName || pendingText;
+    const carText = state.carName || pendingText;
+    const colorText = paint?.name || pendingText;
+    const modelText = state.trim
+      ? `${state.trim}${state.subTrim ? ` · ${state.subTrim}` : ""}`
+      : pendingText;
+    const usageText = state.usage || pendingText;
+    const initialCostText = !state.initialCost
+      ? pendingText
+      : ["초기비용 0원", pendingText].includes(state.initialCost)
+        ? state.initialCost
+        : `${state.initialCost}${state.rate ? ` ${state.rate}` : ""}`;
+    const mileageText = state.mileage || pendingText;
+    const subsidyRegionText = isElectricVehicle()
+      ? (state.subsidyRegion || pendingText)
+      : "해당 없음";
+    const vehicleTitle = state.brandName && state.carName
+      ? `${state.brandName} ${state.carName}`
+      : pendingText;
 
     return `
       <div class="wizard-complete">
@@ -7055,26 +7072,26 @@ const vehicleCatalog = [
 
         <section class="completion-summary" aria-label="견적 신청 내역">
           <div class="completion-vehicle">
-            <img src="${currentCarImage()}" alt="${state.brandName} ${state.carName}">
+            <img src="${currentCarImage()}" alt="${vehicleTitle}">
             <div>
               <small>선택 차량</small>
-              <strong>${state.brandName} ${state.carName}</strong>
-              <span>${paint?.name || "상담 후 결정"}</span>
+              <strong>${vehicleTitle}</strong>
+              <span>${colorText}</span>
             </div>
           </div>
 
           <div class="completion-section">
             <h3>차량 및 이용조건</h3>
             <dl class="completion-details">
-              <div><dt>브랜드</dt><dd>${state.brandName}</dd></div>
-              <div><dt>차량</dt><dd>${state.carName}</dd></div>
-              <div><dt>외장 색상</dt><dd>${paint?.name || "상담 후 결정"}</dd></div>
-              <div><dt>세부 모델</dt><dd>${state.trim}${state.subTrim ? ` · ${state.subTrim}` : ""}</dd></div>
-              <div><dt>이용 방식</dt><dd>${state.usage}</dd></div>
+              <div><dt>브랜드</dt><dd>${brandText}</dd></div>
+              <div><dt>차량</dt><dd>${carText}</dd></div>
+              <div><dt>외장 색상</dt><dd>${colorText}</dd></div>
+              <div><dt>세부 모델</dt><dd>${modelText}</dd></div>
+              <div><dt>이용 방식</dt><dd>${usageText}</dd></div>
               <div><dt>초기비용</dt><dd>${initialCostText}</dd></div>
-              <div><dt>주행거리</dt><dd>${state.mileage}</dd></div>
+              <div><dt>주행거리</dt><dd>${mileageText}</dd></div>
               <div><dt>할인율</dt><dd>최대 10%</dd></div>
-              ${isElectricVehicle() ? `<div><dt>보조금 지역</dt><dd>${state.subsidyRegion}</dd></div>` : ""}
+              <div><dt>보조금 지역</dt><dd>${subsidyRegionText}</dd></div>
             </dl>
           </div>
 
@@ -7150,6 +7167,7 @@ const vehicleCatalog = [
 
     backButton.hidden = state.step === 1;
     consultButton.hidden = !shouldShowConsultButton;
+    consultButton.textContent = "바로 견적신청";
     actions.classList.toggle("has-consult-button", shouldShowConsultButton);
     nextButton.innerHTML = state.step === 4
       ? `견적신청 ${arrowIcon()}`
@@ -7777,13 +7795,10 @@ const vehicleCatalog = [
   }
 
   function moveToConsultStep() {
-    // 첫 화면에서 차량을 선택하지 않았더라도 이용조건 단계로 바로 이동합니다.
-    // 미선택 차량과 세부모델은 최종 신청 내용에서 상담 후 결정으로 표시됩니다.
-    if (!state.trim) state.trim = "상담 후 결정";
-    if (!state.subTrim) state.subTrim = "";
-
-    state.step = 3;
-    state.maxReachedStep = Math.max(state.maxReachedStep, 3);
+    // 1·2단계에서 바로 견적 신청을 선택하면 정보입력 단계로 이동합니다.
+    // 선택하지 않은 항목은 STEP 04 요약에서 "상담 후 결정"으로 표시합니다.
+    state.step = 4;
+    state.maxReachedStep = Math.max(state.maxReachedStep, 4);
     render();
     scrollToEstimate();
   }
@@ -7898,6 +7913,7 @@ const vehicleCatalog = [
 
   function buildEstimatePayload() {
     const paint = currentPaint();
+    const pendingText = "상담 후 결정";
 
     // 제출 직전에 화면의 지역 선택값을 한 번 더 읽어
     // state와 실제 select 값이 어긋나는 상황을 방지합니다.
@@ -7909,19 +7925,21 @@ const vehicleCatalog = [
     return {
       submittedAt: new Date().toLocaleString("ko-KR"),
       vehicleType: "수입차",
-      brand: state.brandName,
-      vehicle: state.carName,
-      exteriorColor: paint?.name || "",
-      model: state.trim,
-      trim: getTrimTextForMail(state.subTrim),
-      usageType: state.usage,
-      initialCostType: state.initialCost,
-      initialCostRate: ["초기비용 0원", "상담 후 결정"].includes(state.initialCost) ? "해당 없음" : state.rate,
-      annualMileage: state.mileage,
+      brand: state.brandName || pendingText,
+      vehicle: state.carName || pendingText,
+      exteriorColor: paint?.name || pendingText,
+      model: state.trim || pendingText,
+      trim: getTrimTextForMail(state.subTrim || pendingText),
+      usageType: state.usage || pendingText,
+      initialCostType: state.initialCost || pendingText,
+      initialCostRate: !state.initialCost || ["초기비용 0원", pendingText].includes(state.initialCost)
+        ? "해당 없음"
+        : (state.rate || pendingText),
+      annualMileage: state.mileage || pendingText,
 
       // Apps Script의 data.subsidyRegion과 동일한 필드명으로 전송합니다.
       subsidyRegion: isElectricVehicle()
-        ? (state.subsidyRegion || "")
+        ? (state.subsidyRegion || pendingText)
         : "해당 없음",
 
       customerName: state.customerName,
