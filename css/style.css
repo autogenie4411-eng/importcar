@@ -2058,13 +2058,7 @@ body:has(.wizard-page) {
 .wizard-hero {
     color: #17345c;
     text-align: center;
-    background:
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(47, 107, 255, 0.08),
-            transparent 58%
-        ),
-        #ffffff;
+    background: #ffffff;
     padding: 38px 22px 28px;
     position: relative;
     overflow: hidden;
