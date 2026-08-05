@@ -6524,7 +6524,7 @@ const vehicleCatalog = [
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHeVUiq4WjdycA0cdfDDspGpb4JDQzCNGZu8pX5f9k9vyaJfs7R9JHqUAG_NTlKK-ifA/exec";
 
   const trims = ["전체 모델", "2.5 가솔린", "3.5 가솔린", "3.5 가솔린 AWD"];
-  const rateOptions = ["10%", "20%", "30%", "40%", "50%"];
+  const rateOptions = ["10%", "20%", "30%", "40%"];
   const mileageOptions = ["연 1만km", "연 2만km", "연 3만km", "연 4만km", "무제한", "상담 후 결정"];
 
   // 사이트에는 제조사 공식 트림명을 그대로 표시하고,
