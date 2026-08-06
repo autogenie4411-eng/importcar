@@ -6918,7 +6918,6 @@ const vehicleCatalog = [
         <div class="step-heading">
           <span>STEP 03</span>
           <h2>이용조건을 선택해 주세요.</h2>
-          <p>원하는 조건이 없거나 모르겠다면 기본값으로 진행해도 됩니다.</p>
         </div>
 
         <fieldset class="option-block" data-option-section="usage">
