@@ -6523,6 +6523,116 @@ const vehicleCatalog = [
   // 예: https://script.google.com/macros/s/AKfycb.../exec
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHeVUiq4WjdycA0cdfDDspGpb4JDQzCNGZu8pX5f9k9vyaJfs7R9JHqUAG_NTlKK-ifA/exec";
 
+  /* =========================================================
+    방문 유입 로그 전송
+  ========================================================= */
+
+  function getReferrerDomain(referrer) {
+    if (!referrer) {
+      return "직접 접속";
+    }
+
+    try {
+      return new URL(referrer).hostname.replace(/^www\./, "");
+    } catch (error) {
+      return referrer;
+    }
+  }
+
+  function getVisitorId() {
+    const key = "autogenie_visitor_id";
+    let visitorId = localStorage.getItem(key);
+
+    if (!visitorId) {
+      visitorId =
+        "visitor_" +
+        Date.now().toString(36) +
+        "_" +
+        Math.random().toString(36).slice(2, 10);
+
+      localStorage.setItem(key, visitorId);
+    }
+
+    return visitorId;
+  }
+
+  function getDeviceType() {
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    if (/ipad|tablet/.test(userAgent)) {
+      return "태블릿";
+    }
+
+    if (/android|iphone|ipod|mobile/.test(userAgent)) {
+      return "모바일";
+    }
+
+    return "PC";
+  }
+
+  function getBrowserName() {
+    const userAgent = navigator.userAgent;
+
+    if (userAgent.includes("Whale/")) return "Whale";
+    if (userAgent.includes("Edg/")) return "Edge";
+    if (userAgent.includes("SamsungBrowser/")) return "Samsung Internet";
+    if (userAgent.includes("Chrome/")) return "Chrome";
+    if (userAgent.includes("Safari/")) return "Safari";
+    if (userAgent.includes("Firefox/")) return "Firefox";
+
+    return "기타";
+  }
+
+  function sendVisitLog() {
+    const sessionKey = "autogenie_visit_logged";
+
+    if (sessionStorage.getItem(sessionKey) === "true") {
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const referrer = document.referrer || "";
+
+    const body = new URLSearchParams({
+      requestType: "page_visit",
+      visitedAt: new Date().toISOString(),
+
+      referrerDomain: getReferrerDomain(referrer),
+      referrerUrl: referrer || "직접 접속",
+
+      utmSource: params.get("utm_source") || "",
+      utmMedium: params.get("utm_medium") || "",
+      utmCampaign: params.get("utm_campaign") || "",
+      utmContent: params.get("utm_content") || "",
+
+      pageUrl: window.location.href,
+      visitorId: getVisitorId(),
+      deviceType: getDeviceType(),
+      browserName: getBrowserName()
+    });
+
+    fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type":
+          "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: body.toString(),
+      keepalive: true
+    })
+      .then(() => {
+        sessionStorage.setItem(sessionKey, "true");
+      })
+      .catch(error => {
+        console.error("방문 로그 전송 실패:", error);
+      });
+  }
+
+  window.addEventListener("load", sendVisitLog, {
+    once: true
+  });
+
   const trims = ["전체 모델", "2.5 가솔린", "3.5 가솔린", "3.5 가솔린 AWD"];
   const rateOptions = ["10%", "20%", "30%", "40%"];
   const mileageOptions = ["연 1만km", "연 2만km", "연 3만km", "연 4만km", "무제한", "상담 후 결정"];
