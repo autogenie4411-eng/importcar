@@ -6388,72 +6388,6 @@ const vehicleCatalog = [
   const fallbackImage = "images/g_g90.png";
 
   /* ==============================
-     최초 유입 정보 수집
-  ============================== */
-
-  function getTrafficInfo() {
-    const storageKey = "autojiniTrafficInfo";
-    const params = new URLSearchParams(window.location.search);
-
-    const trackingKeys = [
-      "utm_source",
-      "utm_medium",
-      "utm_campaign"
-    ];
-
-    const hasTrackingParameters = trackingKeys.some(key => params.has(key));
-
-    const makeTrafficInfo = () => ({
-      referrer: document.referrer || "직접 접속",
-      utmSource: params.get("utm_source") || "없음",
-      utmMedium: params.get("utm_medium") || "없음",
-      utmCampaign: params.get("utm_campaign") || "없음"
-    });
-
-    if (hasTrackingParameters) {
-      const currentTraffic = makeTrafficInfo();
-
-      try {
-        sessionStorage.setItem(storageKey, JSON.stringify(currentTraffic));
-      } catch (error) {
-        console.warn("유입 정보를 저장하지 못했습니다.", error);
-      }
-
-      return currentTraffic;
-    }
-
-    try {
-      const savedTraffic = sessionStorage.getItem(storageKey);
-
-      if (savedTraffic) {
-        const parsed = JSON.parse(savedTraffic);
-
-        return {
-          referrer: parsed.referrer || "직접 접속",
-          utmSource: parsed.utmSource || "없음",
-          utmMedium: parsed.utmMedium || "없음",
-          utmCampaign: parsed.utmCampaign || "없음"
-        };
-      }
-    } catch (error) {
-      console.warn("저장된 유입 정보를 읽지 못했습니다.", error);
-    }
-
-    const directTraffic = makeTrafficInfo();
-
-    try {
-      sessionStorage.setItem(storageKey, JSON.stringify(directTraffic));
-    } catch (error) {
-      console.warn("유입 정보를 저장하지 못했습니다.", error);
-    }
-
-    return directTraffic;
-  }
-
-  const trafficInfo = getTrafficInfo();
-
-
-  /* ==============================
      방문자 보안 정보 수집
   ============================== */
 
@@ -6535,35 +6469,22 @@ const vehicleCatalog = [
     try {
       return new URL(referrer).hostname.replace(/^www\./, "");
     } catch (error) {
-      return referrer;
+      return "외부 유입";
     }
-  }
-
-  function getVisitorId() {
-    const key = "autogenie_visitor_id";
-    let visitorId = localStorage.getItem(key);
-
-    if (!visitorId) {
-      visitorId =
-        "visitor_" +
-        Date.now().toString(36) +
-        "_" +
-        Math.random().toString(36).slice(2, 10);
-
-      localStorage.setItem(key, visitorId);
-    }
-
-    return visitorId;
   }
 
   function getDeviceType() {
     const userAgent = navigator.userAgent.toLowerCase();
 
-    if (/ipad|tablet/.test(userAgent)) {
+    const isTablet =
+      /ipad|tablet|playbook|silk/.test(userAgent) ||
+      (/android/.test(userAgent) && !/mobile/.test(userAgent));
+
+    if (isTablet) {
       return "태블릿";
     }
 
-    if (/android|iphone|ipod|mobile/.test(userAgent)) {
+    if (/android|iphone|ipod|windows phone|mobile/.test(userAgent)) {
       return "모바일";
     }
 
@@ -6573,60 +6494,81 @@ const vehicleCatalog = [
   function getBrowserName() {
     const userAgent = navigator.userAgent;
 
-    if (userAgent.includes("Whale/")) return "Whale";
-    if (userAgent.includes("Edg/")) return "Edge";
-    if (userAgent.includes("SamsungBrowser/")) return "Samsung Internet";
-    if (userAgent.includes("Chrome/")) return "Chrome";
-    if (userAgent.includes("Safari/")) return "Safari";
-    if (userAgent.includes("Firefox/")) return "Firefox";
+    if (/Whale\//i.test(userAgent)) return "Whale";
+    if (/Edg\//i.test(userAgent)) return "Edge";
+    if (/SamsungBrowser\//i.test(userAgent)) return "Samsung Internet";
+    if (/OPR\//i.test(userAgent)) return "Opera";
+    if (/Firefox\//i.test(userAgent)) return "Firefox";
+    if (/Chrome\//i.test(userAgent)) return "Chrome";
+    if (/Safari\//i.test(userAgent)) return "Safari";
 
     return "기타";
   }
 
-  function sendVisitLog() {
-    const sessionKey = "autogenie_visit_logged";
+  async function getPublicIpAddress() {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json", {
+        method: "GET",
+        cache: "no-store"
+      });
 
-    if (sessionStorage.getItem(sessionKey) === "true") {
-      return;
+      if (!response.ok) {
+        throw new Error(`IP 조회 실패: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return String(result.ip || "").trim();
+    } catch (error) {
+      console.warn("방문자 IP를 확인하지 못했습니다.", error);
+      return "";
+    }
+  }
+
+  async function sendVisitLog() {
+    const sessionKey = "autogenie_import_visit_logged";
+
+    try {
+      if (sessionStorage.getItem(sessionKey) === "true") {
+        return;
+      }
+    } catch (error) {
+      console.warn("방문 로그 저장 여부를 읽지 못했습니다.", error);
     }
 
-    const params = new URLSearchParams(window.location.search);
     const referrer = document.referrer || "";
+    const ipAddress = await getPublicIpAddress();
 
     const body = new URLSearchParams({
       requestType: "page_visit",
       visitedAt: new Date().toISOString(),
-
+      customerName: "",
+      ipAddress: ipAddress,
       referrerDomain: getReferrerDomain(referrer),
       referrerUrl: referrer || "직접 접속",
-
-      utmSource: params.get("utm_source") || "",
-      utmMedium: params.get("utm_medium") || "",
-      utmCampaign: params.get("utm_campaign") || "",
-      utmContent: params.get("utm_content") || "",
-
-      pageUrl: window.location.href,
-      visitorId: getVisitorId(),
+      visitorId: getAutojiniVisitorId(),
       deviceType: getDeviceType(),
       browserName: getBrowserName()
     });
 
-    fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type":
-          "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: body.toString(),
-      keepalive: true
-    })
-      .then(() => {
-        sessionStorage.setItem(sessionKey, "true");
-      })
-      .catch(error => {
-        console.error("방문 로그 전송 실패:", error);
+    try {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: body.toString(),
+        keepalive: true
       });
+
+      try {
+        sessionStorage.setItem(sessionKey, "true");
+      } catch (error) {
+        console.warn("방문 로그 저장 여부를 기록하지 못했습니다.", error);
+      }
+    } catch (error) {
+      console.error("방문 로그 전송 실패:", error);
+    }
   }
 
   window.addEventListener("load", sendVisitLog, {
@@ -8053,13 +7995,7 @@ const vehicleCatalog = [
 
       customerName: state.customerName,
       customerPhone: state.customerPhone,
-      contactMethod: state.contactMethod,
-
-      // 기본 유입 정보
-      referrer: trafficInfo.referrer,
-      utmSource: trafficInfo.utmSource,
-      utmMedium: trafficInfo.utmMedium,
-      utmCampaign: trafficInfo.utmCampaign
+      contactMethod: state.contactMethod
     };
   }
 
@@ -8090,13 +8026,7 @@ const vehicleCatalog = [
       customerPhone: payload.customerPhone || "",
       contactMethod: payload.contactMethod || "",
 
-      // 기본 유입 정보
-      referrer: payload.referrer || "직접 접속",
-      utmSource: payload.utmSource || "없음",
-      utmMedium: payload.utmMedium || "없음",
-      utmCampaign: payload.utmCampaign || "없음",
-
-      // 방문자 ID 기반 반복 신청 확인 정보
+      // 방문로그와 같은 방문자 ID로 고객이름을 연결합니다.
       visitorId: securityData.visitorId || "확인 불가",
       elapsedSeconds: String(securityData.elapsedSeconds || 0)
     });
