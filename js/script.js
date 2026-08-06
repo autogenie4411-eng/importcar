@@ -6506,22 +6506,64 @@ const vehicleCatalog = [
   }
 
   async function getPublicIpAddress() {
-    try {
-      const response = await fetch("https://api.ipify.org?format=json", {
-        method: "GET",
-        cache: "no-store"
-      });
-
-      if (!response.ok) {
-        throw new Error(`IP 조회 실패: ${response.status}`);
+    const ipServices = [
+      {
+        url: "https://api.ipify.org?format=json",
+        getIp: data => data.ip
+      },
+      {
+        url: "https://api64.ipify.org?format=json",
+        getIp: data => data.ip
+      },
+      {
+        url: "https://icanhazip.com/",
+        getIp: data => data
       }
+    ];
 
-      const result = await response.json();
-      return String(result.ip || "").trim();
-    } catch (error) {
-      console.warn("방문자 IP를 확인하지 못했습니다.", error);
-      return "";
+    for (const service of ipServices) {
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => {
+        controller.abort();
+      }, 3500);
+
+      try {
+        const response = await fetch(service.url, {
+          method: "GET",
+          cache: "no-store",
+          signal: controller.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        let responseData;
+
+        if (service.url.includes("icanhazip.com")) {
+          responseData = await response.text();
+        } else {
+          responseData = await response.json();
+        }
+
+        const ipAddress = String(
+          service.getIp(responseData) || ""
+        ).trim();
+
+        if (ipAddress) {
+          return ipAddress;
+        }
+      } catch (error) {
+        console.warn(
+          `IP 조회 실패: ${service.url}`,
+          error
+        );
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
     }
+
+    return "조회 실패";
   }
 
   async function sendVisitLog() {
