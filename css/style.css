@@ -5052,35 +5052,15 @@ body.loader-active {
    차량 리스트 - 브랜드별 이미지 위치/크기 조정
    여기 값만 바꾸면 해당 브랜드의 리스트 이미지 전체에 적용됩니다.
 ========================================================= */
-    .vehicle-card-item[data-brand="현대"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="제네시스"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.8;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="르노"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 5px;
-    }
-    .vehicle-card-item[data-brand="쉐보레"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
     .vehicle-card-item[data-brand="BMW"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.6;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
+        --list-brand-scale: 1.3;
+        --list-brand-x: 5px;
+        --list-brand-y: 12px;
     }
     .vehicle-card-item[data-brand="벤츠"] .vehicle-card-item__thumb img {
         --list-brand-scale: 1.3;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
+        --list-brand-x: 7px;
+        --list-brand-y: 10px;
     }
     .vehicle-card-item[data-brand="아우디"] .vehicle-card-item__thumb img {
         --list-brand-scale: 1.7;
@@ -5088,24 +5068,24 @@ body.loader-active {
         --list-brand-y: 0px;
     }
     .vehicle-card-item[data-brand="볼보"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.5;
-        --list-brand-x: -2px;
-        --list-brand-y: -18px;
+        --list-brand-scale: 1.4;
+        --list-brand-x: 4px;
+        --list-brand-y: -8px;
     }
     .vehicle-card-item[data-brand="테슬라"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.6;
-        --list-brand-x: -4px;
-        --list-brand-y: -17px;
+        --list-brand-scale: 1.5;
+        --list-brand-x: -2px;
+        --list-brand-y: -4px;
     }
     .vehicle-card-item[data-brand="랜드로버"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.3;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
+        --list-brand-scale: 1.2;
+        --list-brand-x: 7px;
+        --list-brand-y: -1px;
     }
     .vehicle-card-item[data-brand="폭스바겐"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.3;
-        --list-brand-x: -1px;
-        --list-brand-y: -6px;
+        --list-brand-scale: 1.4;
+        --list-brand-x: 4px;
+        --list-brand-y: 2px;
     }
 }
 
