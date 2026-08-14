@@ -6574,7 +6574,10 @@ function paintSwatchStyle(paint) {
         state.trim = button.dataset.engineModel;
         state.subTrim = "";
         render();
-        scrollToNextSelection('[data-option-section="sub-trim"]');
+
+        // 2단계에서는 세부모델을 선택해도 다음 항목으로 내려가지 않고
+        // 항상 "1. 세부모델" 영역을 화면 상단 기준으로 유지합니다.
+        scrollToNextSelection('[data-option-section="engine-model"]', "start");
       });
     });
 
@@ -6582,7 +6585,9 @@ function paintSwatchStyle(paint) {
       button.addEventListener("click", () => {
         state.subTrim = button.dataset.subTrim;
         render();
-        scrollToNextSelection("#wizardActions");
+
+        // 하위 트림 선택 시에도 하단 버튼으로 자동 이동하지 않습니다.
+        scrollToNextSelection('[data-option-section="engine-model"]', "start");
       });
     });
 
