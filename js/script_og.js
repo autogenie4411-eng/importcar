@@ -5460,53 +5460,8 @@ const vehicleCatalog = [
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHeVUiq4WjdycA0cdfDDspGpb4JDQzCNGZu8pX5f9k9vyaJfs7R9JHqUAG_NTlKK-ifA/exec";
 
   /* =========================================================
-    방문 유입 로그 + 실제 사이트 체류시간 측정
-
-    - visitorId: 같은 브라우저 사용자를 구분하는 ID (기존 값 재사용)
-    - visitSessionId: 이번 사이트 방문 1회를 구분하는 ID
-    - 실제 화면에 사이트가 보이는 시간만 체류시간으로 누적
-    - 다른 앱/탭 이동, 홈 화면, 화면 잠금 시간은 제외
-    - 탭/사이트를 닫았다가 다시 접속하면 새 방문으로 기록
+    방문 유입 로그 전송
   ========================================================= */
-
-  const AUTOJINI_VISIT_LOGGED_KEY = "autogenie_import_visit_logged";
-  const AUTOJINI_VISIT_SESSION_ID_KEY = "autogenie_import_visit_session_id";
-  const AUTOJINI_VISIT_HEARTBEAT_MS = 15000;
-
-  let autojiniVisitSessionId = "";
-  let autojiniVisitActiveMs = 0;
-  let autojiniVisitActiveStartedAt = null;
-  let autojiniVisitLastSentSeconds = -1;
-  let autojiniVisitHeartbeatTimer = null;
-  let autojiniVisitReady = false;
-
-  function createAutojiniVisitSessionId() {
-    return window.crypto && typeof window.crypto.randomUUID === "function"
-      ? window.crypto.randomUUID()
-      : `visit_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 12)}`;
-  }
-
-  function getOrCreateAutojiniVisitSessionId() {
-    try {
-      const savedId = sessionStorage.getItem(AUTOJINI_VISIT_SESSION_ID_KEY) || "";
-
-      if (savedId) {
-        return savedId;
-      }
-
-      const newId = createAutojiniVisitSessionId();
-      sessionStorage.setItem(AUTOJINI_VISIT_SESSION_ID_KEY, newId);
-
-      // 예전 코드에서 방문 완료 표시만 남아 있는 경우
-      // 새 세션 ID에 맞춰 방문로그를 다시 생성합니다.
-      sessionStorage.removeItem(AUTOJINI_VISIT_LOGGED_KEY);
-
-      return newId;
-    } catch (error) {
-      console.warn("방문 세션 ID를 저장하지 못했습니다.", error);
-      return createAutojiniVisitSessionId();
-    }
-  }
 
   function getReferrerDomain(referrer) {
     if (!referrer) {
@@ -5613,61 +5568,12 @@ const vehicleCatalog = [
     return "조회 실패";
   }
 
-  function postAutojiniVisitData(data, preferBeacon = false) {
-    if (!GOOGLE_APPS_SCRIPT_URL) {
-      return Promise.resolve(false);
-    }
-
-    const body = new URLSearchParams();
-
-    Object.entries(data).forEach(([key, value]) => {
-      if (value === undefined || value === null) {
-        return;
-      }
-
-      body.append(key, String(value));
-    });
-
-    if (
-      preferBeacon &&
-      typeof navigator.sendBeacon === "function"
-    ) {
-      try {
-        const blob = new Blob(
-          [body.toString()],
-          { type: "application/x-www-form-urlencoded;charset=UTF-8" }
-        );
-
-        if (navigator.sendBeacon(GOOGLE_APPS_SCRIPT_URL, blob)) {
-          return Promise.resolve(true);
-        }
-      } catch (error) {
-        console.warn("체류시간 Beacon 전송 실패", error);
-      }
-    }
-
-    return fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: body.toString(),
-      keepalive: true
-    })
-      .then(() => true)
-      .catch(error => {
-        console.error("방문 로그 전송 실패:", error);
-        return false;
-      });
-  }
-
   async function sendVisitLog() {
-    autojiniVisitSessionId = getOrCreateAutojiniVisitSessionId();
+    const sessionKey = "autogenie_import_visit_logged";
 
     try {
-      if (sessionStorage.getItem(AUTOJINI_VISIT_LOGGED_KEY) === "true") {
-        return true;
+      if (sessionStorage.getItem(sessionKey) === "true") {
+        return;
       }
     } catch (error) {
       console.warn("방문 로그 저장 여부를 읽지 못했습니다.", error);
@@ -5676,162 +5582,42 @@ const vehicleCatalog = [
     const referrer = document.referrer || "";
     const ipAddress = await getPublicIpAddress();
 
-    const success = await postAutojiniVisitData({
+    const body = new URLSearchParams({
       requestType: "page_visit",
       visitedAt: new Date().toISOString(),
       customerName: "",
-      ipAddress,
+      ipAddress: ipAddress,
       referrerDomain: getReferrerDomain(referrer),
       referrerUrl: referrer || "직접 접속",
       visitorId: getAutojiniVisitorId(),
-      visitSessionId: autojiniVisitSessionId,
       deviceType: getDeviceType(),
       browserName: getBrowserName()
     });
 
-    if (success) {
+    try {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: body.toString(),
+        keepalive: true
+      });
+
       try {
-        sessionStorage.setItem(AUTOJINI_VISIT_LOGGED_KEY, "true");
+        sessionStorage.setItem(sessionKey, "true");
       } catch (error) {
         console.warn("방문 로그 저장 여부를 기록하지 못했습니다.", error);
       }
+    } catch (error) {
+      console.error("방문 로그 전송 실패:", error);
     }
-
-    return success;
   }
 
-  function resumeAutojiniVisitTime() {
-    if (
-      !autojiniVisitReady ||
-      document.visibilityState !== "visible" ||
-      autojiniVisitActiveStartedAt !== null
-    ) {
-      return;
-    }
-
-    autojiniVisitActiveStartedAt = performance.now();
-  }
-
-  function pauseAutojiniVisitTime() {
-    if (autojiniVisitActiveStartedAt === null) {
-      return;
-    }
-
-    autojiniVisitActiveMs +=
-      performance.now() - autojiniVisitActiveStartedAt;
-
-    autojiniVisitActiveStartedAt = null;
-  }
-
-  function getAutojiniVisitActiveSeconds() {
-    let totalMs = autojiniVisitActiveMs;
-
-    if (autojiniVisitActiveStartedAt !== null) {
-      totalMs += performance.now() - autojiniVisitActiveStartedAt;
-    }
-
-    return Math.max(0, Math.floor(totalMs / 1000));
-  }
-
-  function sendAutojiniVisitDuration(preferBeacon = false) {
-    if (!autojiniVisitReady || !autojiniVisitSessionId) {
-      return;
-    }
-
-    const activeSeconds = getAutojiniVisitActiveSeconds();
-
-    if (
-      !preferBeacon &&
-      activeSeconds === autojiniVisitLastSentSeconds
-    ) {
-      return;
-    }
-
-    autojiniVisitLastSentSeconds = activeSeconds;
-
-    postAutojiniVisitData(
-      {
-        requestType: "page_visit_update",
-        visitorId: getAutojiniVisitorId(),
-        visitSessionId: autojiniVisitSessionId,
-        activeSeconds
-      },
-      preferBeacon
-    );
-  }
-
-  function startAutojiniVisitHeartbeat() {
-    if (autojiniVisitHeartbeatTimer) {
-      window.clearInterval(autojiniVisitHeartbeatTimer);
-    }
-
-    autojiniVisitHeartbeatTimer = window.setInterval(() => {
-      if (document.visibilityState !== "visible") {
-        return;
-      }
-
-      sendAutojiniVisitDuration(false);
-    }, AUTOJINI_VISIT_HEARTBEAT_MS);
-  }
-
-  function handleAutojiniVisibilityChange() {
-    if (document.visibilityState === "hidden") {
-      pauseAutojiniVisitTime();
-      sendAutojiniVisitDuration(true);
-      return;
-    }
-
-    resumeAutojiniVisitTime();
-  }
-
-  function handleAutojiniPageHide() {
-    pauseAutojiniVisitTime();
-    sendAutojiniVisitDuration(true);
-  }
-
-  function handleAutojiniPageShow() {
-    resumeAutojiniVisitTime();
-  }
-
-  async function initializeAutojiniVisitTracking() {
-    const visitSaved = await sendVisitLog();
-
-    if (!visitSaved) {
-      return;
-    }
-
-    autojiniVisitReady = true;
-
-    if (document.visibilityState === "visible") {
-      autojiniVisitActiveStartedAt = performance.now();
-    }
-
-    startAutojiniVisitHeartbeat();
-  }
-
-  document.addEventListener(
-    "visibilitychange",
-    handleAutojiniVisibilityChange,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "pagehide",
-    handleAutojiniPageHide,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "pageshow",
-    handleAutojiniPageShow,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "load",
-    initializeAutojiniVisitTracking,
-    { once: true }
-  );
+  window.addEventListener("load", sendVisitLog, {
+    once: true
+  });
 
   const trims = ["전체 모델", "2.5 가솔린", "3.5 가솔린", "3.5 가솔린 AWD"];
   const rateOptions = ["10%", "20%", "30%", "40%"];
