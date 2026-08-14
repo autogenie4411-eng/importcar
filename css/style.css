@@ -2341,6 +2341,13 @@ body:has(.wizard-page) {
     margin: 0;
     font-weight: 800;
 }
+.discount-rate dt {
+    color: #2f6bff !important;
+    font-weight: 800;
+}
+.discount-rate dd {
+    color: #2f6bff !important;
+}
 .estimate-summary dl .estimate-summary__discount {
     display: block;
     grid-column: 1 / -1;
