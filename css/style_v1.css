@@ -1381,24 +1381,35 @@ body:has(.wizard-page) {
     padding: 16px 20px;
     display: flex;
     box-shadow: 0 8px 18px rgba(23, 39, 60, 0.04);
-    position: relative;
     overflow: hidden;
-
-    /* 차량 리스트 가이드 위치 - 카드 전체 기준 */
-    /* --list-guide-x1: 61%;
-    --list-guide-x2: 95.5%; */
 }
 .vehicle-card-item.active {
     border-color: var(--blue);
     box-shadow: 0 0 0 2px rgba(47, 107, 255, 0.12);
 }
-/* 차량 리스트 가이드라인 - 카드 전체 기준 */
-.vehicle-card-item::before {
+.vehicle-card-item__name {
+    color: #111827;
+    font-size: var(--font-20);
+    font-weight: 900;
+    line-height: 1.3;
+}
+.vehicle-card-item__thumb {
+    flex: 0 0 156px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+
+    --list-guide-x1: 60%;
+    --list-guide-x2: 91.5%;
+}
+
+/* 차량 리스트용 가이드 */
+.vehicle-card-item__thumb::before {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 10;
+    z-index: 5;
 
     background-image:
         linear-gradient(
@@ -1416,661 +1427,56 @@ body:has(.wizard-page) {
             transparent calc(var(--list-guide-x2) + 0.5px)
         );
 }
-.vehicle-card-item::after {
-    content: "";
-    position: absolute;
 
-    top: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 55%;
-
-    background: #fff;
-
-    z-index: 2;
-    pointer-events: none;
-}
-.vehicle-card-item__name {
-    position: relative;
-    z-index: 3;
-    color: #111827;
-    font-size: var(--font-20);
-    font-weight: 900;
-    line-height: 1.3;
-}
-.vehicle-card-item__thumb {
-    position: relative;
-    z-index: 1;
-
-    flex: 0 0 156px;
-    justify-content: flex-end;
-    align-items: center;
-    display: flex;
-
-    overflow: visible;
-}
-
-/* 차량 리스트 이미지 공통 보정값
-   - 브랜드별 위치/크기 조정이 실제 transform에 연결되도록 변수화
-   - +x: 오른쪽 / -x: 왼쪽
-   - +y: 아래 / -y: 위
-*/
 .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.5;
-    --list-brand-x: 0px;
-    --list-brand-y: 0px;
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-
     width: 100%;
     max-width: 156px;
     max-height: 72px;
     object-fit: contain;
-    transform: translate(
-            calc(var(--list-brand-x) + var(--list-car-x-add)),
-            calc(var(--list-brand-y) + var(--list-car-y-add))
-        )
-        scale(calc(var(--list-brand-scale) + var(--list-car-scale-add)));
-    transform-origin: center center;
+    transform: scale(1.5);
 }
 
-/* =========================================================
-   차량 리스트 - 브랜드별 이미지 위치/크기 조정
-   여기 값만 바꾸면 해당 브랜드의 리스트 이미지 전체에 적용됩니다.
-========================================================= */
+/* 차량 카드 이미지 개별 수정 */
+.vehicle-card-item[data-brand="현대"] .vehicle-card-item__thumb img {
+    transform: scale(1.7);
+}
+.vehicle-card-item[data-car-card="포터2"] .vehicle-card-item__thumb img {
+    transform: scale(2.1);
+}
+.vehicle-card-item[data-brand="제네시스"] .vehicle-card-item__thumb img {
+    transform: scale(1.8);
+}
+.vehicle-card-item[data-brand="르노"] .vehicle-card-item__thumb img {
+    transform: translateY(5px) scale(1.7);
+}
+.vehicle-card-item[data-car-card="아르카나"] .vehicle-card-item__thumb img {
+    transform: translateY(5px) scale(1.8);
+}
+.vehicle-card-item[data-car-card="아르카나 하이브리드"]
+    .vehicle-card-item__thumb
+    img {
+    transform: translateY(5px) scale(1.8);
+}
+.vehicle-card-item[data-car-card="필랑트 하이브리드 E-Tech"]
+    .vehicle-card-item__thumb
+    img {
+    transform: translateY(-2px) scale(1.3);
+}
+.vehicle-card-item[data-brand="쉐보레"] .vehicle-card-item__thumb img {
+    transform: scale(1.7);
+}
 .vehicle-card-item[data-brand="BMW"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.55;
-    --list-brand-x: 0px;
-    --list-brand-y: 13px;
+    transform: scale(1.7);
 }
 .vehicle-card-item[data-brand="벤츠"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.55;
-    --list-brand-x: 0px;
-    --list-brand-y: 11px;
+    transform: scale(2);
 }
 .vehicle-card-item[data-brand="아우디"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 2;
-    --list-brand-x: 0px;
-    --list-brand-y: 0px;
-}
-.vehicle-card-item[data-brand="볼보"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.6;
-    --list-brand-x: -1px;
-    --list-brand-y: -6px;
+    transform: scale(2.3);
 }
 .vehicle-card-item[data-brand="테슬라"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.63;
-    --list-brand-x: -3px;
-    --list-brand-y: -5px;
+    transform: scale(2.2);
 }
-.vehicle-card-item[data-brand="랜드로버"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.2;
-    --list-brand-x: 0px;
-    --list-brand-y: 0px;
-}
-.vehicle-card-item[data-brand="폭스바겐"] .vehicle-card-item__thumb img {
-    --list-brand-scale: 1.5;
-    --list-brand-x: -1px;
-    --list-brand-y: 3px;
-}
-
-/* === AUTO GENERATED: IMPORT LIST CAR ADJUSTMENTS START === */
-/* =========================================================
-   수입차 차량 리스트 - 전 차종 개별 보정
-   - 브랜드 기본값에 아래 값을 추가 적용
-   - scale: + 크게 / - 작게
-   - x: + 오른쪽 / - 왼쪽
-   - y: + 아래 / - 위
-========================================================= */
-
-/* BMW */
-.vehicle-card-item[data-brand="BMW"][data-car-card="1시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="2시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -12px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="3시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -21px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="4시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -5px;
-    --list-car-y-add: -18px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="5시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -5px;
-    --list-car-y-add: -18px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="7시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -20px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="8시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.07;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="i4"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -18px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="i5"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -19px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="i7"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -5px;
-    --list-car-y-add: -18px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="iX1"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: -0.02;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="iX2"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="iX3"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="IX"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -14px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X1"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X2"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.01;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -14px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X3"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X4"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X5"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -15px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X6"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="X7"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -5px;
-    --list-car-y-add: -12px;
-}
-.vehicle-card-item[data-brand="BMW"][data-car-card="XM"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -16px;
-}
-
-/* 벤츠 */
-.vehicle-card-item[data-brand="벤츠"][data-car-card="A클래스 해치백"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: -0.02;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -8px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="C클래스 아방가르드"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.06;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="E클래스 아방가르드"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="E클래스 익스클루시브"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.02;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="S클래스"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="G클래스"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="AMG SL 로드스터"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -14px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="EQA"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 1px;
-    --list-car-y-add: -7px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="EQB"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 1px;
-    --list-car-y-add: -7px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="EQE"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="EQS"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: -5px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="AMG GT 43 쿠페"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="AMG GT 55 쿠페"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="AMG GT 63 S E 쿠페"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="CLA"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="CLE AMG 카브리올레"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -12px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="CLE AMG 쿠페"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -13px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLA"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 4px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLB"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLC"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLC 쿠페"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -10px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLE"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 1px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="GLS"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="마이바흐 S클래스"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -4px;
-    --list-car-y-add: -12px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="마이바흐 GLS"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -9px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="마이바흐 SL 모노그램 시리즈"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: -0.05;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -11px;
-}
-.vehicle-card-item[data-brand="벤츠"][data-car-card="마이바흐 EQS"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -9px;
-}
-
-/* 아우디 */
-.vehicle-card-item[data-brand="아우디"][data-car-card="A3"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.05;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -7px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="A5"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.1;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -2px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="A6"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q3"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 2px;
-    --list-car-y-add: 4px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q4 e-tron"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.2;
-    --list-car-x-add: -3px;
-    --list-car-y-add: -18px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q5"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -1px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q6 e-tron"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: -0.05;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -16px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q7"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -8px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="SQ7"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -8px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="Q8"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -8px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="RS Q8"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -1px;
-    --list-car-y-add: -8px;
-}
-.vehicle-card-item[data-brand="아우디"][data-car-card="e-tron"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -10px;
-}
-
-/* 볼보 */
-.vehicle-card-item[data-brand="볼보"][data-car-card="XC40 하이브리드"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="볼보"][data-car-card="XC60 하이브리드"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="볼보"][data-car-card="XC90 하이브리드"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="볼보"][data-car-card="S90"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: -2px;
-    --list-car-y-add: -6px;
-}
-.vehicle-card-item[data-brand="볼보"][data-car-card="EX30"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: -0.05;
-    --list-car-x-add: -2px;
-    --list-car-y-add: 1px;
-}
-.vehicle-card-item[data-brand="볼보"][data-car-card="EX90"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.08;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -4px;
-}
-
-/* 테슬라 */
-.vehicle-card-item[data-brand="테슬라"][data-car-card="모델3"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: -1px;
-}
-.vehicle-card-item[data-brand="테슬라"][data-car-card="모델Y"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="테슬라"][data-car-card="모델Y L"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-
-/* 랜드로버 */
-.vehicle-card-item[data-brand="랜드로버"][data-car-card="더 뉴 레인지로버"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.5;
-    --list-car-x-add: -6px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="랜드로버"][data-car-card="디펜더 90"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.3;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="랜드로버"][data-car-card="디펜더 110"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.3;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="랜드로버"][data-car-card="디펜더 130"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0.3;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-
-/* 폭스바겐 */
-.vehicle-card-item[data-brand="폭스바겐"][data-car-card="ID.4"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-.vehicle-card-item[data-brand="폭스바겐"][data-car-card="ID.5"]
-    .vehicle-card-item__thumb
-    img {
-    --list-car-scale-add: 0;
-    --list-car-x-add: 0px;
-    --list-car-y-add: 0px;
-}
-/* === AUTO GENERATED: IMPORT LIST CAR ADJUSTMENTS END === */
 
 .wizard-car-card {
     background: linear-gradient(145deg, #f9fbfe, #edf3fa);
@@ -2301,13 +1707,6 @@ body:has(.wizard-page) {
     text-align: right;
     margin: 0;
     font-weight: 800;
-}
-.discount-rate dt {
-    color: #2f6bff !important;
-    font-weight: 800;
-}
-.discount-rate dd {
-    color: #2f6bff !important;
 }
 .estimate-summary dl .estimate-summary__discount {
     display: block;
@@ -2703,13 +2102,6 @@ body:has(.wizard-page) {
     top: -65px;
     right: -82px;
 } */
-
-.wizard-zero {
-    color: #2f6bff;
-    font-size: var(--font-20);
-    font-weight: 900;
-    margin: 0 1px 0 0;
-}
 .wizard-hero > p,
 .wizard-hero h1,
 .wizard-hero > span {
@@ -2738,8 +2130,8 @@ body:has(.wizard-page) {
 .wizard-hero > span {
     color: #68798f;
     max-width: 385px;
-    font-size: var(--font-16);
-    margin: 5px auto 10px;
+    font-size: var(--font-size-base);
+    margin: 15px auto 0;
     line-height: 1.65;
     display: block;
 }
@@ -2976,14 +2368,14 @@ body:has(.wizard-page) {
 /* 이미지 크기 가이드라인 */
 :root {
     /* 데스크탑용 */
-    /* --car-guide-x1: 14%;
+    --car-guide-x1: 14%;
     --car-guide-x2: 86%;
-    --car-guide-bottom: 33px; */
+    --car-guide-bottom: 33px;
 
     /* 모바일용 */
-    /* --car-guide-x1: 12%;
+    --car-guide-x1: 12%;
     --car-guide-x2: 88%;
-    --car-guide-bottom: 40px; */
+    --car-guide-bottom: 40px;
 }
 
 .wizard-car-image {
@@ -4591,6 +3983,204 @@ body.loader-active {
     display: block !important;
 }
 
+/* =========================================================
+   BMW
+========================================================= */
+
+/* BMW 브랜드 전체 기본값
+   여기 값을 바꾸면 BMW 전체 차량이 함께 변경됩니다.
+*/
+.car-adjust[data-brand="BMW"] {
+    /* 전 화면 공통 기준 */
+    --brand-scale: 1.1;
+    --brand-x: 3.75%;
+    --brand-y: 12%;
+}
+
+/* 차량별 추가 보정값
+   브랜드 기본값에서 차이나는 만큼만 적습니다.
+*/
+/* 1시리즈 */
+.car-adjust[data-brand="BMW"][data-car="1시리즈"] {
+    --car-scale-add: 0;
+    --car-x-add: 0%;
+    --car-y-add: 0%;
+}
+/* 3시리즈 */
+.car-adjust[data-brand="BMW"][data-car="3시리즈"] {
+    --car-scale-add: -0.01;
+    --car-x-add: 0%;
+    --car-y-add: 0%;
+}
+/* 5시리즈 */
+.car-adjust[data-brand="BMW"][data-car="5시리즈"] {
+    --car-scale-add: -0.01;
+    --car-x-add: -3%;
+    --car-y-add: 1%;
+}
+/* X3 */
+.car-adjust[data-brand="BMW"][data-car="X3"] {
+    --car-scale-add: -0.04;
+    --car-x-add: -3.3%;
+    --car-y-add: -1%;
+}
+/* X5 */
+.car-adjust[data-brand="BMW"][data-car="X5"] {
+    --car-scale-add: -0.07;
+    --car-x-add: -4.2%;
+    --car-y-add: -3%;
+}
+
+/* =========================================================
+   벤츠
+========================================================= */
+
+/* 벤츠 브랜드 전체 기본값
+   여기 값을 바꾸면 벤츠 전체 차량이 함께 변경됩니다.
+*/
+.car-adjust[data-brand="벤츠"] {
+    /* 전 화면 공통 기준 */
+    --brand-scale: 1.25;
+    --brand-x: 5.25%;
+    --brand-y: 21%;
+}
+
+/* 차량별 추가 보정값
+   브랜드 기본값에서 차이나는 만큼만 적습니다.
+*/
+/* CLE AMG 카브리올레 */
+.car-adjust[data-brand="벤츠"][data-car="CLE AMG 카브리올레"] {
+    --car-scale-add: 0;
+    --car-x-add: 0%;
+    --car-y-add: 0%;
+}
+/* CLE AMG 쿠페 */
+.car-adjust[data-brand="벤츠"][data-car="CLE AMG 쿠페"] {
+    --car-scale-add: 0;
+    --car-x-add: 0%;
+    --car-y-add: 0%;
+}
+/* C클래스 아방가르드 */
+.car-adjust[data-brand="벤츠"][data-car="C클래스 아방가르드"] {
+    --car-scale-add: 0;
+    --car-x-add: 0.5%;
+    --car-y-add: 0%;
+}
+/* E클래스 아방가르드 */
+.car-adjust[data-brand="벤츠"][data-car="E클래스 아방가르드"] {
+    --car-scale-add: -0.05;
+    --car-x-add: 0%;
+    --car-y-add: -2%;
+}
+/* E클래스 익스클루시브 */
+.car-adjust[data-brand="벤츠"][data-car="E클래스 익스클루시브"] {
+    --car-scale-add: -0.05;
+    --car-x-add: 0%;
+    --car-y-add: -2%;
+}
+/* GLC 아방가르드 */
+.car-adjust[data-brand="벤츠"][data-car="GLC 아방가르드"] {
+    --car-scale-add: -0.01;
+    --car-x-add: 0%;
+    --car-y-add: -3%;
+}
+/* GLC 쿠페 아방가르드 */
+.car-adjust[data-brand="벤츠"][data-car="GLC 쿠페 아방가르드"] {
+    --car-scale-add: -0.01;
+    --car-x-add: 0%;
+    --car-y-add: -3%;
+}
+/* S클래스 */
+.car-adjust[data-brand="벤츠"][data-car="S클래스"] {
+    --car-scale-add: -0.12;
+    --car-x-add: 2.8%;
+    --car-y-add: -6%;
+}
+
+/* =========================================================
+   아우디
+========================================================= */
+
+/* 아우디 브랜드 전체 기본값
+   여기 값을 바꾸면 아우디 전체 차량이 함께 변경됩니다.
+*/
+.car-adjust[data-brand="아우디"] {
+    /* 전 화면 공통 기준 */
+    --brand-scale: 1.5;
+    --brand-x: 0%;
+    --brand-y: 5%;
+}
+
+/* 차량별 추가 보정값
+   브랜드 기본값에서 차이나는 만큼만 적습니다.
+*/
+/* A6 */
+.car-adjust[data-brand="아우디"][data-car="A6"] {
+    --car-scale-add: -0.1;
+    --car-x-add: 1%;
+    --car-y-add: 2%;
+}
+/* Q5 */
+.car-adjust[data-brand="아우디"][data-car="Q5"] {
+    --car-scale-add: -0.05;
+    --car-x-add: 0%;
+    --car-y-add: -3%;
+}
+
+/* =========================================================
+   볼보
+========================================================= */
+
+/* 볼보 브랜드 전체 기본값
+   여기 값을 바꾸면 볼보 전체 차량이 함께 변경됩니다.
+*/
+.car-adjust[data-brand="볼보"] {
+    /* 전 화면 공통 기준 */
+    --brand-scale: 0.93;
+    --brand-x: -0.2%;
+    --brand-y: 6%;
+}
+
+/* 차량별 추가 보정값
+   브랜드 기본값에서 차이나는 만큼만 적습니다.
+*/
+/* XC90 플러그인 하이브리드 */
+.car-adjust[data-brand="볼보"][data-car="XC90 플러그인 하이브리드"] {
+    --car-scale-add: 0;
+    --car-x-add: 0%;
+    --car-y-add: 0%;
+}
+
+/* =========================================================
+   테슬라
+========================================================= */
+
+/* 테슬라 브랜드 전체 기본값
+   여기 값을 바꾸면 테슬라 전체 차량이 함께 변경됩니다.
+*/
+.car-adjust[data-brand="테슬라"] {
+    /* 전 화면 공통 기준 */
+    --brand-scale: 1.43;
+    --brand-x: -0.2%;
+    --brand-y: 34%;
+}
+
+/* 차량별 추가 보정값
+   브랜드 기본값에서 차이나는 만큼만 적습니다.
+*/
+/* 모델Y */
+.car-adjust[data-brand="테슬라"][data-car="모델Y"] {
+    --car-scale-add: -0.09;
+    --car-x-add: -0.5%;
+    --car-y-add: -4%;
+}
+/* 모델Y L */
+.car-adjust[data-brand="테슬라"][data-car="모델Y L"] {
+    --car-scale-add: -0.11;
+    --car-x-add: -1.5%;
+    --car-y-add: -4%;
+}
+
 /* 외장 색상 개수 및 스와이프 안내
    - 공간이 충분하면 "외장 색상 n개" 오른쪽에 한 줄 표시
    - 한 줄에 들어가지 않으면 안내 문구가 자동으로 다음 줄로 내려감
@@ -5040,72 +4630,6 @@ body.loader-active {
     .selected-vehicle > div {
         padding: 0 !important;
         text-align: left;
-    }
-}
-
-@media (max-width: 425px) {
-    .vehicle-card-item::after {
-        width: 48%;
-    }
-
-    /* =========================================================
-   차량 리스트 - 브랜드별 이미지 위치/크기 조정
-   여기 값만 바꾸면 해당 브랜드의 리스트 이미지 전체에 적용됩니다.
-========================================================= */
-    .vehicle-card-item[data-brand="현대"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="제네시스"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.8;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="르노"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 5px;
-    }
-    .vehicle-card-item[data-brand="쉐보레"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="BMW"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.6;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="벤츠"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.3;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="아우디"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.7;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="볼보"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.5;
-        --list-brand-x: -2px;
-        --list-brand-y: -18px;
-    }
-    .vehicle-card-item[data-brand="테슬라"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.6;
-        --list-brand-x: -4px;
-        --list-brand-y: -17px;
-    }
-    .vehicle-card-item[data-brand="랜드로버"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.3;
-        --list-brand-x: 0px;
-        --list-brand-y: 0px;
-    }
-    .vehicle-card-item[data-brand="폭스바겐"] .vehicle-card-item__thumb img {
-        --list-brand-scale: 1.3;
-        --list-brand-x: -1px;
-        --list-brand-y: -6px;
     }
 }
 
@@ -5925,407 +5449,15 @@ body.loader-active {
     overflow-anchor: none;
 }
 
-/* === AUTO GENERATED: IMPORT DETAIL CAR ADJUSTMENTS START === */
 /* =========================================================
-   차량 선택 후 하단 큰 이미지 - 전 차종 개별 보정
-   - 위 차량 리스트 이미지와 완전히 별개
-   - 브랜드 기본값(--brand-*)에 아래 값을 추가 적용
-   - scale: + 크게 / - 작게
-   - x: + 오른쪽 / - 왼쪽
-   - y: + 아래 / - 위
+   랜드로버 - 신규 추가 차량 이미지 가이드 보정
 ========================================================= */
-
-/* BMW */
-.car-adjust[data-brand="BMW"][data-car="1시리즈"] {
-    --car-scale-add: -0.03;
-    --car-x-add: -1%;
-    --car-y-add: 7%;
-}
-.car-adjust[data-brand="BMW"][data-car="2시리즈"] {
-    --car-scale-add: -0.03;
-    --car-x-add: -1%;
-    --car-y-add: 5%;
-}
-.car-adjust[data-brand="BMW"][data-car="3시리즈"] {
-    --car-scale-add: -0.04;
-    --car-x-add: -0.5%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="BMW"][data-car="4시리즈"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="BMW"][data-car="5시리즈"] {
-    --car-scale-add: -0.055;
-    --car-x-add: 0.1%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="BMW"][data-car="7시리즈"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="BMW"][data-car="8시리즈"] {
-    --car-scale-add: -0.01;
-    --car-x-add: -1%;
-    --car-y-add: 7%;
-}
-.car-adjust[data-brand="BMW"][data-car="i4"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="BMW"][data-car="i5"] {
-    --car-scale-add: -0.06;
-    --car-x-add: 0%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="BMW"][data-car="i7"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 1.5%;
-}
-.car-adjust[data-brand="BMW"][data-car="iX1"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 2.5%;
-}
-.car-adjust[data-brand="BMW"][data-car="iX2"] {
-    --car-scale-add: -0.01;
-    --car-x-add: -0.7%;
-    --car-y-add: 7%;
-}
-.car-adjust[data-brand="BMW"][data-car="iX3"] {
-    --car-scale-add: 0.01;
-    --car-x-add: -2%;
-    --car-y-add: 8%;
-}
-.car-adjust[data-brand="BMW"][data-car="IX"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="BMW"][data-car="X1"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="BMW"][data-car="X2"] {
-    --car-scale-add: -0.06;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="BMW"][data-car="X3"] {
-    --car-scale-add: -0.06;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="BMW"][data-car="X4"] {
-    --car-scale-add: -0.03;
-    --car-x-add: -1%;
-    --car-y-add: 6%;
-}
-.car-adjust[data-brand="BMW"][data-car="X5"] {
-    --car-scale-add: -0.06;
-    --car-x-add: -0.2%;
-    --car-y-add: 0%;
-}
-.car-adjust[data-brand="BMW"][data-car="X6"] {
-    --car-scale-add: -0.03;
-    --car-x-add: -1%;
-    --car-y-add: 5.5%;
-}
-.car-adjust[data-brand="BMW"][data-car="X7"] {
-    --car-scale-add: -0.03;
-    --car-x-add: -1%;
-    --car-y-add: 4.5%;
-}
-.car-adjust[data-brand="BMW"][data-car="XM"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
+.vehicle-card-item[data-brand="랜드로버"] .vehicle-card-item__thumb img {
+    transform: scale(1.45);
 }
 
-/* 벤츠 */
-.car-adjust[data-brand="벤츠"][data-car="A클래스 해치백"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 5%;
+.car-adjust[data-brand="랜드로버"] {
+    --brand-scale: 1.14;
+    --brand-x: 0%;
+    --brand-y: 1.5%;
 }
-.car-adjust[data-brand="벤츠"][data-car="C클래스 아방가르드"] {
-    --car-scale-add: -0.13;
-    --car-x-add: 0%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="벤츠"][data-car="E클래스 아방가르드"] {
-    --car-scale-add: -0.07;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="E클래스 익스클루시브"] {
-    --car-scale-add: -0.07;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="S클래스"] {
-    --car-scale-add: -0.06;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="G클래스"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="AMG SL 로드스터"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="EQA"] {
-    --car-scale-add: 0.08;
-    --car-x-add: -1.1%;
-    --car-y-add: 11%;
-}
-.car-adjust[data-brand="벤츠"][data-car="EQB"] {
-    --car-scale-add: 0.08;
-    --car-x-add: -1.1%;
-    --car-y-add: 11%;
-}
-.car-adjust[data-brand="벤츠"][data-car="EQE"] {
-    --car-scale-add: -0.02;
-    --car-x-add: -1.3%;
-    --car-y-add: 5%;
-}
-.car-adjust[data-brand="벤츠"][data-car="EQS"] {
-    --car-scale-add: 0;
-    --car-x-add: -1.5%;
-    --car-y-add: 8%;
-}
-.car-adjust[data-brand="벤츠"][data-car="AMG GT 43 쿠페"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="AMG GT 55 쿠페"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="AMG GT 63 S E 쿠페"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="CLA"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="CLE AMG 카브리올레"] {
-    --car-scale-add: -0.08;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="CLE AMG 쿠페"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLA"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLB"] {
-    --car-scale-add: -0.1;
-    --car-x-add: -1%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLC"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLC 쿠페"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLE"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="GLS"] {
-    --car-scale-add: -0.07;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="마이바흐 S클래스"] {
-    --car-scale-add: -0.08;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="마이바흐 GLS"] {
-    --car-scale-add: -0.15;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="벤츠"][data-car="마이바흐 SL 모노그램 시리즈"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0.2%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="벤츠"][data-car="마이바흐 EQS"] {
-    --car-scale-add: -0.05;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-
-/* 아우디 */
-.car-adjust[data-brand="아우디"][data-car="A3"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: -1%;
-}
-.car-adjust[data-brand="아우디"][data-car="A5"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="아우디"][data-car="A6"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 1%;
-    --car-y-add: 5%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q3"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 2%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q4 e-tron"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: -5%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q5"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q6 e-tron"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: -5%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q7"] {
-    --car-scale-add: 0;
-    --car-x-add: 0%;
-    --car-y-add: 0%;
-}
-.car-adjust[data-brand="아우디"][data-car="SQ7"] {
-    --car-scale-add: 0;
-    --car-x-add: 0%;
-    --car-y-add: 0%;
-}
-.car-adjust[data-brand="아우디"][data-car="Q8"] {
-    --car-scale-add: 0;
-    --car-x-add: 0%;
-    --car-y-add: 0%;
-}
-.car-adjust[data-brand="아우디"][data-car="RS Q8"] {
-    --car-scale-add: 0;
-    --car-x-add: 0%;
-    --car-y-add: 0%;
-}
-.car-adjust[data-brand="아우디"][data-car="e-tron"] {
-    --car-scale-add: 0.1;
-    --car-x-add: 0%;
-    --car-y-add: -3%;
-}
-
-/* 볼보 */
-.car-adjust[data-brand="볼보"][data-car="XC40 하이브리드"] {
-    --car-scale-add: -0.04;
-    --car-x-add: 1%;
-    --car-y-add: 2%;
-}
-.car-adjust[data-brand="볼보"][data-car="XC60 하이브리드"] {
-    --car-scale-add: -0.02;
-    --car-x-add: 1%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="볼보"][data-car="XC90 하이브리드"] {
-    --car-scale-add: -0.04;
-    --car-x-add: 0.5%;
-    --car-y-add: 0.08%;
-}
-.car-adjust[data-brand="볼보"][data-car="S90"] {
-    --car-scale-add: -0.04;
-    --car-x-add: 0.5%;
-    --car-y-add: -0.5%;
-}
-.car-adjust[data-brand="볼보"][data-car="EX30"] {
-    --car-scale-add: -0.05;
-    --car-x-add: -0.5%;
-    --car-y-add: 0.5%;
-}
-.car-adjust[data-brand="볼보"][data-car="EX90"] {
-    --car-scale-add: 0;
-    --car-x-add: 1%;
-    --car-y-add: 2%;
-}
-
-/* 테슬라 */
-.car-adjust[data-brand="테슬라"][data-car="모델3"] {
-    --car-scale-add: -0.01;
-    --car-x-add: -0.5%;
-    --car-y-add: 4%;
-}
-.car-adjust[data-brand="테슬라"][data-car="모델Y"] {
-    --car-scale-add: 0;
-    --car-x-add: -0.5%;
-    --car-y-add: 5%;
-}
-.car-adjust[data-brand="테슬라"][data-car="모델Y L"] {
-    --car-scale-add: 0;
-    --car-x-add: -0.5%;
-    --car-y-add: 5%;
-}
-
-/* 랜드로버 */
-.car-adjust[data-brand="랜드로버"][data-car="더 뉴 레인지로버"] {
-    --car-scale-add: 0;
-    --car-x-add: -2%;
-    --car-y-add: 8%;
-}
-.car-adjust[data-brand="랜드로버"][data-car="디펜더 90"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="랜드로버"][data-car="디펜더 110"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 1%;
-}
-.car-adjust[data-brand="랜드로버"][data-car="디펜더 130"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 1%;
-}
-
-/* 폭스바겐 */
-.car-adjust[data-brand="폭스바겐"][data-car="ID.4"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-.car-adjust[data-brand="폭스바겐"][data-car="ID.5"] {
-    --car-scale-add: -0.1;
-    --car-x-add: 0%;
-    --car-y-add: 3%;
-}
-/* === AUTO GENERATED: IMPORT DETAIL CAR ADJUSTMENTS END === */

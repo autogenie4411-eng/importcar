@@ -220,7 +220,7 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0191",
             "name": "M 브루클린 그레이 메탈릭",
-            "hex": "#9FA3A6",
+            "hex": "#A9A7A6",
             "border": "#cfd5dc",
             "image": "images/vehicles/BMW/4시리즈-M 브루클린 그레이 메탈릭.webp"
           },
@@ -1285,274 +1285,171 @@ const vehicleCatalog = [
         ]
       },
       {
-        "name": "E클래스 아방가르드",
-        "detailModels": [
-          {
-            "name": "E 200",
-            "trims": [
-              "Avantgarde"
-            ]
-          }
-        ],
-        "paints": [
-          {
-            "id": "paint-benz-e-avantgarde-graphite-grey",
-            "name": "그라파이트 그레이",
-            "hex": "#5f656b",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-그라파이트 그레이.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-nautic-blue",
-            "name": "노틱 블루",
-            "hex": "#315d88",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-노틱 블루.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-verde-silver",
-            "name": "베르데 실버",
-            "hex": "#728C85",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-베르데 실버.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-velvet-brown",
-            "name": "벨벳 브라운",
-            "hex": "#755548",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-벨벳 브라운.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-obsidian-black",
-            "name": "옵시디안 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-옵시디안 블랙.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-polar-white",
-            "name": "폴라 화이트",
-            "hex": "#f3f2ed",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-폴라 화이트.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-high-tech-silver",
-            "name": "하이 테크 실버",
-            "hex": "#b9bec5",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-하이 테크 실버.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-manufaktur-alpine-grey",
-            "name": "MANUFAKTUR 알파인 그레이",
-            "hex": "#929393",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 알파인 그레이.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-manufaktur-opalite-white-bright",
-            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
-          },
-          {
-            "id": "paint-benz-e-avantgarde-manufaktur-patagonia-red-bright",
-            "name": "MANUFAKTUR 파타고니아 레드 브라이트",
-            "hex": "#a92b31",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 파타고니아 레드 브라이트.webp"
-          }
-        ]
-      },
+  "name": "E클래스 아방가르드",
+  "detailModels": [
+    {
+      "name": "E 200",
+      "trims": [
+        "Avantgarde"
+      ]
+    }
+  ],
+  "paints": [
+    {
+      "id": "paint-benz-e-avantgarde-graphite-grey",
+      "name": "그라파이트 그레이",
+      "hex": "#5f656b",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-그라파이트 그레이.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-nautic-blue",
+      "name": "노틱 블루",
+      "hex": "#315d88",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-노틱 블루.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-verde-silver",
+      "name": "베르데 실버",
+      "hex": "#495956",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-베르데 실버.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-velvet-brown",
+      "name": "벨벳 브라운",
+      "hex": "#755548",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-벨벳 브라운.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-obsidian-black",
+      "name": "옵시디안 블랙",
+      "hex": "#17191c",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-옵시디안 블랙.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-polar-white",
+      "name": "폴라 화이트",
+      "hex": "#f3f2ed",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-폴라 화이트.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-high-tech-silver",
+      "name": "하이 테크 실버",
+      "hex": "#b9bec5",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-하이 테크 실버.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-manufaktur-alpine-grey",
+      "name": "MANUFAKTUR 알파인 그레이",
+      "hex": "#929393",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 알파인 그레이.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-manufaktur-opalite-white-bright",
+      "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+      "hex": "#ececea",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
+    },
+    {
+      "id": "paint-benz-e-avantgarde-manufaktur-patagonia-red-bright",
+      "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+      "hex": "#a92b31",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 아방가르드-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+    }
+  ]
+},
      {
-        "name": "E클래스 익스클루시브",
-        "detailModels": [
-          {
-            "name": "E 300 4MATIC",
-            "trims": [
-              "Exclusive"
-            ]
-          }
-        ],
-        "paints": [
-          {
-            "id": "paint-benz-e-exclusive-graphite-grey",
-            "name": "그라파이트 그레이",
-            "hex": "#5f656b",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-그라파이트 그레이.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-nautic-blue",
-            "name": "노틱 블루",
-            "hex": "#315d88",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-노틱 블루.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-verde-silver",
-            "name": "베르데 실버",
-            "hex": "#728C85",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-베르데 실버.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-velvet-brown",
-            "name": "벨벳 브라운",
-            "hex": "#755548",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-벨벳 브라운.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-obsidian-black",
-            "name": "옵시디안 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-옵시디안 블랙.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-polar-white",
-            "name": "폴라 화이트",
-            "hex": "#f3f2ed",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-폴라 화이트.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-high-tech-silver",
-            "name": "하이 테크 실버",
-            "hex": "#b9bec5",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-하이 테크 실버.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-manufaktur-alpine-grey",
-            "name": "MANUFAKTUR 알파인 그레이",
-            "hex": "#929393",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 알파인 그레이.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-manufaktur-opalite-white-bright",
-            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
-          },
-          {
-            "id": "paint-benz-e-exclusive-manufaktur-patagonia-red-bright",
-            "name": "MANUFAKTUR 파타고니아 레드 브라이트",
-            "hex": "#a92b31",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 파타고니아 레드 브라이트.webp"
-          }
-        ]
-      },
-      {
-        "name": "S클래스",
-        "detailModels": [
-          {
-            "name": "S 350d 4MATIC",
-            "trims": [
-              "A/T"
-            ]
-          },
-          {
-            "name": "S 450 4MATIC",
-            "trims": [
-              "A/T"
-            ]
-          }
-        ],
-        "paints": [
-          {
-            "id": "paint-benz-sclass-graphite-grey",
-            "name": "그라파이트 그레이",
-            "hex": "#5f656b",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-그라파이트 그레이.webp"
-          },
-          {
-            "id": "paint-benz-sclass-nautic-blue",
-            "name": "노틱 블루",
-            "hex": "#315d88",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-노틱 블루.webp"
-          },
-          {
-            "id": "paint-benz-sclass-verde-silver",
-            "name": "베르데 실버",
-            "hex": "#a8b3ad",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-베르데 실버.webp"
-          },
-          {
-            "id": "paint-benz-sclass-velvet-brown",
-            "name": "벨벳 브라운",
-            "hex": "#755548",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-벨벳 브라운.webp"
-          },
-          {
-            "id": "paint-benz-sclass-black",
-            "name": "블랙",
-            "hex": "#111214",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-블랙.webp"
-          },
-          {
-            "id": "paint-benz-sclass-emerald-green",
-            "name": "에메랄드 그린",
-            "hex": "#314f43",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-에메랄드 그린.webp"
-          },
-          {
-            "id": "paint-benz-sclass-obsidian-black",
-            "name": "옵시디안 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-옵시디안 블랙.webp"
-          },
-          {
-            "id": "paint-benz-sclass-warm-grey",
-            "name": "웜 그레이",
-            "hex": "#827f79",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-웜 그레이.webp"
-          },
-          {
-            "id": "paint-benz-sclass-high-tech-silver",
-            "name": "하이 테크 실버",
-            "hex": "#b9bec5",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-하이 테크 실버.webp"
-          },
-          {
-            "id": "paint-benz-sclass-manufaktur-opalite-white-bright",
-            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
-          },
-          {
-            "id": "paint-benz-sclass-manufaktur-kalahari-gold",
-            "name": "MANUFAKTUR 칼라하리 골드",
-            "hex": "#a88a58",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-MANUFAKTUR 칼라하리 골드.webp"
-          },
-          {
-            "id": "paint-benz-sclass-manufaktur-patagonia-red",
-            "name": "MANUFAKTUR 파타고니아 레드",
-            "hex": "#8f3035",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/S클래스-MANUFAKTUR 파타고니아 레드.webp"
-          }
-        ]
-      },
+  "name": "E클래스 익스클루시브",
+  "detailModels": [
+    {
+      "name": "E 300 4MATIC",
+      "trims": [
+        "Exclusive"
+      ]
+    }
+  ],
+  "paints": [
+    {
+      "id": "paint-benz-e-exclusive-graphite-grey",
+      "name": "그라파이트 그레이",
+      "hex": "#5f656b",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-그라파이트 그레이.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-nautic-blue",
+      "name": "노틱 블루",
+      "hex": "#315d88",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-노틱 블루.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-verde-silver",
+      "name": "베르데 실버",
+      "hex": "#495956",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-베르데 실버.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-velvet-brown",
+      "name": "벨벳 브라운",
+      "hex": "#755548",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-벨벳 브라운.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-obsidian-black",
+      "name": "옵시디안 블랙",
+      "hex": "#17191c",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-옵시디안 블랙.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-polar-white",
+      "name": "폴라 화이트",
+      "hex": "#f3f2ed",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-폴라 화이트.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-high-tech-silver",
+      "name": "하이 테크 실버",
+      "hex": "#b9bec5",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-하이 테크 실버.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-manufaktur-alpine-grey",
+      "name": "MANUFAKTUR 알파인 그레이",
+      "hex": "#929393",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 알파인 그레이.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-manufaktur-opalite-white-bright",
+      "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+      "hex": "#ececea",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
+    },
+    {
+      "id": "paint-benz-e-exclusive-manufaktur-patagonia-red-bright",
+      "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+      "hex": "#a92b31",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/E클래스 익스클루시브-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+    }
+  ]
+},
       {
         "name": "G클래스",
         "detailModels": [
@@ -2640,61 +2537,75 @@ const vehicleCatalog = [
     }
   ],
   "paints": [
- {
-      "id": "paint-benz-cle-amg-cabriolet-spectral-blue-v2",
+    {
+      "id": "paint-benz-cle-amg-cabriolet-graphite-grey",
+      "name": "그라파이트 그레이",
+      "hex": "#5f656b",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-그라파이트 그레이.webp"
+    },
+    {
+      "id": "paint-benz-cle-amg-cabriolet-spectral-blue",
       "name": "스펙트럴 블루",
       "hex": "#315d88",
       "border": "#cfd5dc",
       "image": "images/vehicles/벤츠/CLE AMG 카브리올레-스펙트럴 블루.webp"
     },
     {
-      "id": "paint-benz-cle-amg-cabriolet-sun-yellow-v2",
-      "name": "썬 옐로우",
-      "hex": "#d5aa39",
+      "id": "paint-benz-cle-amg-cabriolet-high-tech-silver",
+      "name": "하이 테크 실버",
+      "hex": "#b9bec5",
       "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-썬 옐로우.webp"
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-하이 테크 실버.webp"
     },
     {
-      "id": "paint-benz-cle-amg-cabriolet-obsidian-black-v2",
-      "name": "옵시디안 블랙",
-      "hex": "#17191c",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-옵시디안 블랙.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-graphite-grey-magno-v2",
+      "id": "paint-benz-cle-amg-cabriolet-manufaktur-graphite-grey-magno",
       "name": "MANUFAKTUR 그라파이트 그레이 마그노",
       "hex": "#4f5254",
       "border": "#cfd5dc",
       "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 그라파이트 그레이 마그노.webp"
     },
     {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-spectral-blue-magno-v2",
-      "name": "MANUFAKTUR 스펙트럴 블루 마그노",
-      "hex": "#2e5377",
-      "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 스펙트럴 블루 마그노.webp"
-    },
-    {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-alpine-grey-v2",
+      "id": "paint-benz-cle-amg-cabriolet-manufaktur-alpine-grey",
       "name": "MANUFAKTUR 알파인 그레이",
       "hex": "#929393",
       "border": "#cfd5dc",
       "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 알파인 그레이.webp"
     },
     {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-opalite-white-v2",
+      "id": "paint-benz-cle-amg-cabriolet-manufaktur-patagonia-red-bright",
+      "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+      "hex": "#a92b31",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+    },
+    {
+      "id": "paint-benz-cle-amg-cabriolet-manufaktur-opalite-white",
       "name": "MANUFAKTUR 오팔라이트 화이트",
       "hex": "#ececea",
       "border": "#cfd5dc",
       "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 오팔라이트 화이트.webp"
     },
     {
-      "id": "paint-benz-cle-amg-cabriolet-manufaktur-patagonia-red-bright-v2",
-      "name": "MANUFAKTUR 파타고니아 레드 브라이트",
-      "hex": "#a92b31",
+      "id": "paint-benz-cle-amg-cabriolet-sun-yellow",
+      "name": "썬 옐로우",
+      "hex": "#d5aa39",
       "border": "#cfd5dc",
-      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-썬 옐로우.webp"
+    },
+    {
+      "id": "paint-benz-cle-amg-cabriolet-polar-white",
+      "name": "폴라 화이트",
+      "hex": "#f3f2ed",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-폴라 화이트.webp"
+    },
+    {
+      "id": "paint-benz-cle-amg-cabriolet-obsidian-black",
+      "name": "옵시디안 블랙",
+      "hex": "#17191c",
+      "border": "#cfd5dc",
+      "image": "images/vehicles/벤츠/CLE AMG 카브리올레-옵시디안 블랙.webp"
     }
   ]
 },
@@ -2710,65 +2621,58 @@ const vehicleCatalog = [
         ],
         "paints": [
           {
-            "id": "paint-benz-cle-amg-coupe-spectral-blue",
+            "id": "paint-206",
+            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+            "hex": "#6d7075",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 그라파이트 그레이 마그노.webp"
+          },
+          {
+            "id": "paint-207",
+            "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+            "hex": "#a92b31",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+          },
+          {
+            "id": "paint-208",
             "name": "스펙트럴 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
             "image": "images/vehicles/벤츠/CLE AMG 쿠페-스펙트럴 블루.webp"
           },
           {
-            "id": "paint-benz-cle-amg-coupe-sun-yellow",
+            "id": "paint-209",
             "name": "썬 옐로우",
             "hex": "#d5aa39",
             "border": "#cfd5dc",
             "image": "images/vehicles/벤츠/CLE AMG 쿠페-썬 옐로우.webp"
           },
           {
-            "id": "paint-benz-cle-amg-coupe-obsidian-black",
+            "id": "paint-210",
             "name": "옵시디안 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
             "image": "images/vehicles/벤츠/CLE AMG 쿠페-옵시디안 블랙.webp"
           },
           {
-            "id": "paint-benz-cle-amg-coupe-manufaktur-graphite-grey-magno",
-            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
-            "hex": "#4f5254",
+            "id": "paint-211",
+            "name": "폴라 화이트",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 그라파이트 그레이 마그노.webp"
+            "image": "images/vehicles/벤츠/CLE AMG 쿠페-폴라 화이트.webp"
           },
           {
-            "id": "paint-benz-cle-amg-coupe-manufaktur-spectral-blue-magno",
-            "name": "MANUFAKTUR 스펙트럴 블루 마그노",
-            "hex": "#2e5377",
+            "id": "paint-212",
+            "name": "하이 테크 실버",
+            "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 스펙트럴 블루 마그노.webp"
-          },
-          {
-            "id": "paint-benz-cle-amg-coupe-manufaktur-alpine-grey",
-            "name": "MANUFAKTUR 알파인 그레이",
-            "hex": "#929393",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 알파인 그레이.webp"
-          },
-          {
-            "id": "paint-benz-cle-amg-coupe-manufaktur-opalite-white",
-            "name": "MANUFAKTUR 오팔라이트 화이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 오팔라이트 화이트.webp"
-          },
-          {
-            "id": "paint-benz-cle-amg-coupe-manufaktur-patagonia-red-bright",
-            "name": "MANUFAKTUR 파타고니아 레드 브라이트",
-            "hex": "#a92b31",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/CLE AMG 쿠페-MANUFAKTUR 파타고니아 레드 브라이트.webp"
+            "image": "images/vehicles/벤츠/CLE AMG 쿠페-하이 테크 실버.webp"
           }
         ]
       },
       {
-        "name": "GLA",
+        "name": "GLA클래스",
         "detailModels": [
           {
             "name": "GLA 250 4MATIC",
@@ -2802,7 +2706,7 @@ const vehicleCatalog = [
         ]
       },
       {
-        "name": "GLB",
+        "name": "GLB클래스",
         "detailModels": [
           {
             "name": "GLB 250 4MATIC",
@@ -2829,7 +2733,7 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0116",
             "name": "마운틴 그레이",
-            "hex": "#737675",
+            "hex": "#A9A7A6",
             "border": "#cfd5dc",
             "image": "images/vehicles/벤츠/GLB-마운틴 그레이.webp"
           },
@@ -2864,7 +2768,7 @@ const vehicleCatalog = [
         ]
       },
       {
-        "name": "GLC",
+        "name": "GLC 아방가르드",
         "detailModels": [
           {
             "name": "GLC 300 4MATIC",
@@ -2875,79 +2779,51 @@ const vehicleCatalog = [
         ],
         "paints": [
           {
-            "id": "paint-benz-glc-graphite-grey",
-            "name": "그라파이트 그레이",
-            "hex": "#5f656b",
+            "id": "paint-234",
+            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+            "hex": "#6d7075",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-그라파이트 그레이.webp"
+            "image": "images/vehicles/벤츠/glc 아방가르드-MANUFAKTUR 그라파이트 그레이 마그노.webp"
           },
           {
-            "id": "paint-benz-glc-verde-silver",
+            "id": "paint-235",
+            "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+            "hex": "#a92b31",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/glc 아방가르드-MANUFAKTUR 파타고니아 레드 메탈릭.webp"
+          },
+          {
+            "id": "paint-236",
             "name": "베르데 실버",
-            "hex": "#8AA6A6",
+            "hex": "#3C5150",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-베르데 실버.webp"
+            "image": "images/vehicles/벤츠/glc 아방가르드-베르데 실버.webp"
           },
           {
-            "id": "paint-benz-glc-spectral-blue",
+            "id": "paint-237",
             "name": "스펙트럴 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-스펙트럴 블루.webp"
+            "image": "images/vehicles/벤츠/glc 아방가르드-스펙트럴 블루.webp"
           },
           {
-            "id": "paint-benz-glc-obsidian-black",
-            "name": "옵시디안 블랙",
-            "hex": "#17191c",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-옵시디안 블랙.webp"
-          },
-          {
-            "id": "paint-benz-glc-polar-white",
+            "id": "paint-239",
             "name": "폴라 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-폴라 화이트.webp"
+            "image": "images/vehicles/벤츠/glc 아방가르드-폴라 화이트.webp"
           },
           {
-            "id": "paint-benz-glc-high-tech-silver",
+            "id": "paint-240",
             "name": "하이 테크 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-하이 테크 실버.webp"
-          },
-          {
-            "id": "paint-benz-glc-manufaktur-graphite-grey-magno",
-            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
-            "hex": "#4f5254",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-MANUFAKTUR 그라파이트 그레이 마그노.webp"
-          },
-          {
-            "id": "paint-benz-glc-manufaktur-alpine-grey-solid",
-            "name": "MANUFAKTUR 알파인 그레이 솔리드",
-            "hex": "#929393",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-MANUFAKTUR 알파인 그레이 솔리드.webp"
-          },
-          {
-            "id": "paint-benz-glc-manufaktur-opalite-white-bright",
-            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
-          },
-          {
-            "id": "paint-benz-glc-manufaktur-patagonia-red-metallic",
-            "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
-            "hex": "#8f3035",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC-MANUFAKTUR 파타고니아 레드 메탈릭.webp"
+            "image": "images/vehicles/벤츠/glc 아방가르드-하이 테크 실버.webp"
           }
         ]
       },
       {
-        "name": "GLC 쿠페",
+        "name": "GLC 쿠페 아방가르드",
         "detailModels": [
           {
             "name": "GLC 300 4MATIC",
@@ -2958,79 +2834,58 @@ const vehicleCatalog = [
         ],
         "paints": [
           {
-            "id": "paint-benz-glc-coupe-avantgarde-graphite-grey",
-            "name": "그라파이트 그레이",
-            "hex": "#5f656b",
+            "id": "paint-241",
+            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+            "hex": "#6d7075",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-그라파이트 그레이.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-MANUFAKTUR 그라파이트 그레이 마그노.webp"
           },
           {
-            "id": "paint-benz-glc-coupe-avantgarde-verde-silver",
-            "name": "베르데 실버",
-            "hex": "#8AA6A6",
+            "id": "paint-242",
+            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-베르데 실버.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
           },
           {
-            "id": "paint-benz-glc-coupe-avantgarde-spectral-blue",
+            "id": "paint-243",
+            "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+            "hex": "#a92b31",
+            "border": "#cfd5dc",
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-MANUFAKTUR 파타고니아 레드 메탈릭.webp"
+          },
+          {
+            "id": "paint-244",
             "name": "스펙트럴 블루",
             "hex": "#315d88",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-스펙트럴 블루.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-스펙트럴 블루.webp"
           },
           {
-            "id": "paint-benz-glc-coupe-avantgarde-obsidian-black",
+            "id": "paint-245",
             "name": "옵시디안 블랙",
             "hex": "#17191c",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-옵시디안 블랙.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-옵시디안 블랙.webp"
           },
           {
-            "id": "paint-benz-glc-coupe-avantgarde-polar-white",
+            "id": "paint-246",
             "name": "폴라 화이트",
             "hex": "#f3f2ed",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-폴라 화이트.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-폴라 화이트.webp"
           },
           {
-            "id": "paint-benz-glc-coupe-avantgarde-high-tech-silver",
+            "id": "paint-247",
             "name": "하이 테크 실버",
             "hex": "#b9bec5",
             "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-하이 테크 실버.webp"
-          },
-          {
-            "id": "paint-benz-glc-coupe-avantgarde-manufaktur-graphite-grey-magno",
-            "name": "MANUFAKTUR 그라파이트 그레이 마그노",
-            "hex": "#4f5254",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-MANUFAKTUR 그라파이트 그레이 마그노.webp"
-          },
-          {
-            "id": "paint-benz-glc-coupe-avantgarde-manufaktur-alpine-grey-solid",
-            "name": "MANUFAKTUR 알파인 그레이 솔리드",
-            "hex": "#929393",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-MANUFAKTUR 알파인 그레이 솔리드.webp"
-          },
-          {
-            "id": "paint-benz-glc-coupe-avantgarde-manufaktur-opalite-white-bright",
-            "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
-            "hex": "#ececea",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-MANUFAKTUR 오팔라이트 화이트 브라이트.webp"
-          },
-          {
-            "id": "paint-benz-glc-coupe-avantgarde-manufaktur-patagonia-red-metallic",
-            "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
-            "hex": "#8f3035",
-            "border": "#cfd5dc",
-            "image": "images/vehicles/벤츠/GLC 쿠페-MANUFAKTUR 파타고니아 레드 메탈릭.webp"
+            "image": "images/vehicles/벤츠/glc 쿠페 아방가르드-하이 테크 실버.webp"
           }
         ]
       },
       {
-        "name": "GLE",
+        "name": "GLE클래스",
         "detailModels": [
           {
             "name": "GLE300d 4MATIC",
@@ -3125,7 +2980,7 @@ const vehicleCatalog = [
         ]
       },
       {
-        "name": "GLS",
+        "name": "GLS클래스",
         "detailModels": [
           {
             "name": "GLS 450 4MATIC",
@@ -3351,7 +3206,7 @@ const vehicleCatalog = [
         ]
       },
       {
-        "name": "마이바흐 GLS",
+        "name": "마이바흐 GLS클래스",
         "detailModels": [
           {
             "name": "GLS 600 4MATIC",
@@ -4495,7 +4350,7 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0355",
             "name": "데님 블루",
-            "hex": "#687077",
+            "hex": "#6A7176",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC40-데님 블루.webp"
           },
@@ -4523,7 +4378,7 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0360",
             "name": "클라우드 블루",
-            "hex": "#B9C0C9",
+            "hex": "#315d88",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC40-클라우드 블루.webp"
           }
@@ -4543,14 +4398,14 @@ const vehicleCatalog = [
           {
             "id": "paint-249",
             "name": "데님 블루",
-            "hex": "#687077",
+            "hex": "#6A7176",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC60-데님 블루.webp"
           },
           {
             "id": "paint-250",
             "name": "멀베리 레드",
-            "hex": "#716464",
+            "hex": "#a92b31",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC60-멀베리 레드.webp"
           },
@@ -4607,14 +4462,14 @@ const vehicleCatalog = [
           {
             "id": "paint-256",
             "name": "데님 블루",
-            "hex": "#687077",
+            "hex": "#315d88",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC90-데님 블루.webp"
           },
           {
             "id": "paint-257",
             "name": "멀베리 레드",
-            "hex": "#716464",
+            "hex": "#a92b31",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC90-멀베리 레드.webp"
           },
@@ -4628,7 +4483,7 @@ const vehicleCatalog = [
           {
             "id": "paint-259",
             "name": "브라이트 더스크",
-            "hex": "#D4D2D1",
+            "hex": "#D3D1D0",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/XC90-브라이트 더스크.webp"
           },
@@ -4671,14 +4526,14 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0337",
             "name": "데님 블루",
-            "hex": "#687077",
+            "hex": "#315d88",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/S90-데님 블루.webp"
           },
           {
             "id": "paint-add-0338",
             "name": "멀베리 레드",
-            "hex": "#716464",
+            "hex": "#9b3038",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/S90-멀베리 레드.webp"
           },
@@ -4692,7 +4547,7 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0340",
             "name": "브라이트 더스크",
-            "hex": "#D4D2D1",
+            "hex": "#D3D1D0",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/S90-브라이트 더스크.webp"
           },
@@ -4770,14 +4625,14 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0347",
             "name": "데님 블루",
-            "hex": "#687077",
+            "hex": "#747A7F",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/EX90-데님 블루.webp"
           },
           {
             "id": "paint-add-0348",
             "name": "멀베리 레드",
-            "hex": "#716464",
+            "hex": "#9b3038",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/EX90-멀베리 레드.webp"
           },
@@ -4805,21 +4660,21 @@ const vehicleCatalog = [
           {
             "id": "paint-add-0352",
             "name": "오로라 실버",
-            "hex": "#CECED0",
+            "hex": "#b9bec5",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/EX90-오로라 실버.webp"
           },
           {
             "id": "paint-add-0353",
             "name": "크리스탈 화이트",
-            "hex": "#EEF0F0",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/EX90-크리스탈 화이트.webp"
           },
           {
             "id": "paint-add-0354",
             "name": "포레스트 레이크",
-            "hex": "#8B9191",
+            "hex": "#949B9B",
             "border": "#cfd5dc",
             "image": "images/vehicles/볼보/EX90-포레스트 레이크.webp"
           }
@@ -4873,7 +4728,7 @@ const vehicleCatalog = [
           {
             "id": "paint-303",
             "name": "펄 화이트 멀티코트",
-            "hex": "#F2F4F8",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델3-펄 화이트 멀티코트.webp"
           }
@@ -4927,14 +4782,14 @@ const vehicleCatalog = [
           {
             "id": "paint-314",
             "name": "퀵실버",
-            "hex": "#5B5A5E",
+            "hex": "#b9bec5",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델Y-퀵실버.webp"
           },
           {
             "id": "paint-315",
             "name": "펄 화이트 멀티코트",
-            "hex": "#F2F4F8",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델Y-펄 화이트 멀티코트.webp"
           }
@@ -4968,7 +4823,7 @@ const vehicleCatalog = [
           {
             "id": "paint-306",
             "name": "스텔스 그레이",
-            "hex": "#373942",
+            "hex": "#494954",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델Y L-스텔스 그레이.webp"
           },
@@ -4982,14 +4837,14 @@ const vehicleCatalog = [
           {
             "id": "paint-308",
             "name": "코스믹 실버",
-            "hex": "#B0AAAF",
+            "hex": "#b9bec5",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델Y L-코스믹 실버.webp"
           },
           {
             "id": "paint-309",
             "name": "펄 화이트 멀티코트",
-            "hex": "#F2F4F8",
+            "hex": "#f3f2ed",
             "border": "#cfd5dc",
             "image": "images/vehicles/테슬라/모델Y L-펄 화이트 멀티코트.webp"
           }
@@ -5605,53 +5460,8 @@ const vehicleCatalog = [
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHeVUiq4WjdycA0cdfDDspGpb4JDQzCNGZu8pX5f9k9vyaJfs7R9JHqUAG_NTlKK-ifA/exec";
 
   /* =========================================================
-    방문 유입 로그 + 실제 사이트 체류시간 측정
-
-    - visitorId: 같은 브라우저 사용자를 구분하는 ID (기존 값 재사용)
-    - visitSessionId: 이번 사이트 방문 1회를 구분하는 ID
-    - 실제 화면에 사이트가 보이는 시간만 체류시간으로 누적
-    - 다른 앱/탭 이동, 홈 화면, 화면 잠금 시간은 제외
-    - 탭/사이트를 닫았다가 다시 접속하면 새 방문으로 기록
+    방문 유입 로그 전송
   ========================================================= */
-
-  const AUTOJINI_VISIT_LOGGED_KEY = "autogenie_import_visit_logged";
-  const AUTOJINI_VISIT_SESSION_ID_KEY = "autogenie_import_visit_session_id";
-  const AUTOJINI_VISIT_HEARTBEAT_MS = 10000;
-
-  let autojiniVisitSessionId = "";
-  let autojiniVisitActiveMs = 0;
-  let autojiniVisitActiveStartedAt = null;
-  let autojiniVisitLastSentSeconds = -1;
-  let autojiniVisitHeartbeatTimer = null;
-  let autojiniVisitReady = false;
-
-  function createAutojiniVisitSessionId() {
-    return window.crypto && typeof window.crypto.randomUUID === "function"
-      ? window.crypto.randomUUID()
-      : `visit_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 12)}`;
-  }
-
-  function getOrCreateAutojiniVisitSessionId() {
-    try {
-      const savedId = sessionStorage.getItem(AUTOJINI_VISIT_SESSION_ID_KEY) || "";
-
-      if (savedId) {
-        return savedId;
-      }
-
-      const newId = createAutojiniVisitSessionId();
-      sessionStorage.setItem(AUTOJINI_VISIT_SESSION_ID_KEY, newId);
-
-      // 예전 코드에서 방문 완료 표시만 남아 있는 경우
-      // 새 세션 ID에 맞춰 방문로그를 다시 생성합니다.
-      sessionStorage.removeItem(AUTOJINI_VISIT_LOGGED_KEY);
-
-      return newId;
-    } catch (error) {
-      console.warn("방문 세션 ID를 저장하지 못했습니다.", error);
-      return createAutojiniVisitSessionId();
-    }
-  }
 
   function getReferrerDomain(referrer) {
     if (!referrer) {
@@ -5758,61 +5568,12 @@ const vehicleCatalog = [
     return "조회 실패";
   }
 
-  function postAutojiniVisitData(data, preferBeacon = false) {
-    if (!GOOGLE_APPS_SCRIPT_URL) {
-      return Promise.resolve(false);
-    }
-
-    const body = new URLSearchParams();
-
-    Object.entries(data).forEach(([key, value]) => {
-      if (value === undefined || value === null) {
-        return;
-      }
-
-      body.append(key, String(value));
-    });
-
-    if (
-      preferBeacon &&
-      typeof navigator.sendBeacon === "function"
-    ) {
-      try {
-        const blob = new Blob(
-          [body.toString()],
-          { type: "application/x-www-form-urlencoded;charset=UTF-8" }
-        );
-
-        if (navigator.sendBeacon(GOOGLE_APPS_SCRIPT_URL, blob)) {
-          return Promise.resolve(true);
-        }
-      } catch (error) {
-        console.warn("체류시간 Beacon 전송 실패", error);
-      }
-    }
-
-    return fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: body.toString(),
-      keepalive: true
-    })
-      .then(() => true)
-      .catch(error => {
-        console.error("방문 로그 전송 실패:", error);
-        return false;
-      });
-  }
-
   async function sendVisitLog() {
-    autojiniVisitSessionId = getOrCreateAutojiniVisitSessionId();
+    const sessionKey = "autogenie_import_visit_logged";
 
     try {
-      if (sessionStorage.getItem(AUTOJINI_VISIT_LOGGED_KEY) === "true") {
-        return true;
+      if (sessionStorage.getItem(sessionKey) === "true") {
+        return;
       }
     } catch (error) {
       console.warn("방문 로그 저장 여부를 읽지 못했습니다.", error);
@@ -5821,162 +5582,42 @@ const vehicleCatalog = [
     const referrer = document.referrer || "";
     const ipAddress = await getPublicIpAddress();
 
-    const success = await postAutojiniVisitData({
+    const body = new URLSearchParams({
       requestType: "page_visit",
       visitedAt: new Date().toISOString(),
       customerName: "",
-      ipAddress,
+      ipAddress: ipAddress,
       referrerDomain: getReferrerDomain(referrer),
       referrerUrl: referrer || "직접 접속",
       visitorId: getAutojiniVisitorId(),
-      visitSessionId: autojiniVisitSessionId,
       deviceType: getDeviceType(),
       browserName: getBrowserName()
     });
 
-    if (success) {
+    try {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: body.toString(),
+        keepalive: true
+      });
+
       try {
-        sessionStorage.setItem(AUTOJINI_VISIT_LOGGED_KEY, "true");
+        sessionStorage.setItem(sessionKey, "true");
       } catch (error) {
         console.warn("방문 로그 저장 여부를 기록하지 못했습니다.", error);
       }
+    } catch (error) {
+      console.error("방문 로그 전송 실패:", error);
     }
-
-    return success;
   }
 
-  function resumeAutojiniVisitTime() {
-    if (
-      !autojiniVisitReady ||
-      document.visibilityState !== "visible" ||
-      autojiniVisitActiveStartedAt !== null
-    ) {
-      return;
-    }
-
-    autojiniVisitActiveStartedAt = performance.now();
-  }
-
-  function pauseAutojiniVisitTime() {
-    if (autojiniVisitActiveStartedAt === null) {
-      return;
-    }
-
-    autojiniVisitActiveMs +=
-      performance.now() - autojiniVisitActiveStartedAt;
-
-    autojiniVisitActiveStartedAt = null;
-  }
-
-  function getAutojiniVisitActiveSeconds() {
-    let totalMs = autojiniVisitActiveMs;
-
-    if (autojiniVisitActiveStartedAt !== null) {
-      totalMs += performance.now() - autojiniVisitActiveStartedAt;
-    }
-
-    return Math.max(0, Math.floor(totalMs / 1000));
-  }
-
-  function sendAutojiniVisitDuration(preferBeacon = false) {
-    if (!autojiniVisitReady || !autojiniVisitSessionId) {
-      return;
-    }
-
-    const activeSeconds = getAutojiniVisitActiveSeconds();
-
-    if (
-      !preferBeacon &&
-      activeSeconds === autojiniVisitLastSentSeconds
-    ) {
-      return;
-    }
-
-    autojiniVisitLastSentSeconds = activeSeconds;
-
-    postAutojiniVisitData(
-      {
-        requestType: "page_visit_update",
-        visitorId: getAutojiniVisitorId(),
-        visitSessionId: autojiniVisitSessionId,
-        activeSeconds
-      },
-      preferBeacon
-    );
-  }
-
-  function startAutojiniVisitHeartbeat() {
-    if (autojiniVisitHeartbeatTimer) {
-      window.clearInterval(autojiniVisitHeartbeatTimer);
-    }
-
-    autojiniVisitHeartbeatTimer = window.setInterval(() => {
-      if (document.visibilityState !== "visible") {
-        return;
-      }
-
-      sendAutojiniVisitDuration(false);
-    }, AUTOJINI_VISIT_HEARTBEAT_MS);
-  }
-
-  function handleAutojiniVisibilityChange() {
-    if (document.visibilityState === "hidden") {
-      pauseAutojiniVisitTime();
-      sendAutojiniVisitDuration(true);
-      return;
-    }
-
-    resumeAutojiniVisitTime();
-  }
-
-  function handleAutojiniPageHide() {
-    pauseAutojiniVisitTime();
-    sendAutojiniVisitDuration(true);
-  }
-
-  function handleAutojiniPageShow() {
-    resumeAutojiniVisitTime();
-  }
-
-  async function initializeAutojiniVisitTracking() {
-    const visitSaved = await sendVisitLog();
-
-    if (!visitSaved) {
-      return;
-    }
-
-    autojiniVisitReady = true;
-
-    if (document.visibilityState === "visible") {
-      autojiniVisitActiveStartedAt = performance.now();
-    }
-
-    startAutojiniVisitHeartbeat();
-  }
-
-  document.addEventListener(
-    "visibilitychange",
-    handleAutojiniVisibilityChange,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "pagehide",
-    handleAutojiniPageHide,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "pageshow",
-    handleAutojiniPageShow,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "load",
-    initializeAutojiniVisitTracking,
-    { once: true }
-  );
+  window.addEventListener("load", sendVisitLog, {
+    once: true
+  });
 
   const trims = ["전체 모델", "2.5 가솔린", "3.5 가솔린", "3.5 가솔린 AWD"];
   const rateOptions = ["10%", "20%", "30%", "40%"];
