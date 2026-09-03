@@ -6147,17 +6147,40 @@ const vehicleCatalog = [
 
   function isElectricVehicle() {
     const carName = state.carName || "";
-    const electricNames = [
-      "아이오닉5", "아이오닉6", "아이오닉9", "캐스퍼 일렉트릭",
-      "코나 일렉트릭", "포터2 일렉트릭", "일렉트리파이드 G80", "GV60",
-      "일렉트리파이드 GV70", "EV3", "EV4", "EV5",
-      "EV6", "EV9", "PV5 카고", "니로 EV",
-      "레이 EV", "무쏘 EV", "토레스 EVX", "모델3",
-      "모델Y", "모델Y L", "ID.4", "ID.5",
-      "EQA", "EQB", "EQE", "EQS",
-      "i4", "i5", "i7", "ix1",
-      "ix2", "ix3", "IX", "Q4 e-tron",
-      "Q6 e-tron", "e-tron", "EX30", "EX90"
+    const importElectricNames = [
+      // BMW
+      "i4",
+      "i5",
+      "i7",
+      "iX1",
+      "iX2",
+      "iX3",
+      "IX",
+
+      // 벤츠
+      "EQA",
+      "EQB",
+      "EQE",
+      "EQS",
+      "마이바흐 EQS",
+
+      // 아우디
+      "Q4 e-tron",
+      "Q6 e-tron",
+      "e-tron",
+
+      // 볼보
+      "EX30",
+      "EX90",
+
+      // 테슬라
+      "모델3",
+      "모델Y",
+      "모델Y L",
+
+      // 폭스바겐
+      "ID.4",
+      "ID.5"
     ];
 
     return electricNames.includes(carName);
