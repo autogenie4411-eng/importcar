@@ -6183,7 +6183,7 @@ const vehicleCatalog = [
       "ID.5"
     ];
 
-    return electricNames.includes(carName);
+    return importElectricNames.includes(carName);
   }
 
   function currentPaints() {
