@@ -1,11 +1,24 @@
 {
   "source": "https://www.agautoplan.com/review",
-  "generatedAt": "2026-09-01T04:16:22.012Z",
-  "filter": "latest-import-cars-only",
-  "targetCount": 20,
+  "generatedAt": "2026-09-07T00:46:02.694Z",
+  "filter": "latest-62-days-import-cars-only",
+  "recentDays": 93,
   "order": "board-visible-order-newest-first",
   "count": 20,
   "reviews": [
+    {
+      "id": "173672030",
+      "title": "A6 올로드콰트로 법인사업자 리스 출고 후기입니다.",
+      "brand": "아우디",
+      "model": "아우디 A6 올로드콰트로",
+      "manager": "김형원 차장 ❤️❤️",
+      "color": "(외장) 블랙 / (내장) 블랙",
+      "method": "법인사업자 / 리스",
+      "date": "2026-09-02",
+      "image": "https://cdn.imweb.me/thumbnail/20260903/0b5e1017b8d9f.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173672030&t=board",
+      "sourceOrder": 6
+    },
     {
       "id": "173575144",
       "title": "테슬라 모델 Y 개인 리스 출고 후기입니다.",
@@ -15,9 +28,9 @@
       "color": "(외장) 화이트 / (내장) 젠그레이",
       "method": "개인 / 리스",
       "date": "2026-08-26",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/bdf18317132be.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=173575144",
-      "sourceOrder": 6
+      "image": "https://cdn.imweb.me/thumbnail/20260831/cb006b6692e76.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575144&t=board",
+      "sourceOrder": 14
     },
     {
       "id": "173575142",
@@ -28,9 +41,9 @@
       "color": "(외장) 화이트 / (내장) 메리노 블랙",
       "method": "개인사업자 / 리스",
       "date": "2026-08-26",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/9dcca9c4f495d.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=173575142",
-      "sourceOrder": 8
+      "image": "https://cdn.imweb.me/thumbnail/20260831/5cb8c3842babe.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575142&t=board",
+      "sourceOrder": 16
     },
     {
       "id": "173575141",
@@ -41,9 +54,9 @@
       "color": "(외장) 브루클린 그레이 / (내장) 모카",
       "method": "개인사업자 / 리스",
       "date": "2026-08-26",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/eac598444e991.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=173575141",
-      "sourceOrder": 9
+      "image": "https://cdn.imweb.me/thumbnail/20260831/37ec2315960d0.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575141&t=board",
+      "sourceOrder": 17
     },
     {
       "id": "173244612",
@@ -54,9 +67,22 @@
       "color": "(외장) 그레나딜라블랙메탈릭 / (내장) 블랙",
       "method": "개인 / 렌트",
       "date": "2026-08-19",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/68413100dfda4.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=173244612",
-      "sourceOrder": 14
+      "image": "https://cdn.imweb.me/thumbnail/20260820/b313c4f45b408.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173244612&t=board",
+      "sourceOrder": 22
+    },
+    {
+      "id": "173074681",
+      "title": "아토3 개인 렌트 출고 후기입니다.",
+      "brand": "BYD",
+      "model": "아토3",
+      "manager": "고치연 차장 ❤️❤️",
+      "color": "(외장) 그레이 / (내장) 블랙",
+      "method": "개인 / 렌트",
+      "date": "2026-08-12",
+      "image": "https://cdn.imweb.me/thumbnail/20260813/2f548a98fa108.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=173074681&t=board",
+      "sourceOrder": 28
     },
     {
       "id": "172991912",
@@ -67,9 +93,9 @@
       "color": "(외장) 카본 블랙 / (내장) 블랙",
       "method": "개인사업자 / 리스",
       "date": "2026-08-10",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/6ab999e6223fc.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172991912",
-      "sourceOrder": 23
+      "image": "https://cdn.imweb.me/thumbnail/20260810/3af5132037665.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=172991912&t=board",
+      "sourceOrder": 31
     },
     {
       "id": "172834247",
@@ -80,9 +106,9 @@
       "color": "(외장) 화이트 / (내장) 블랙",
       "method": "개인 / 렌트",
       "date": "2026-07-31",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/5c51407aaf24b.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172834247",
-      "sourceOrder": 31
+      "image": "https://cdn.imweb.me/thumbnail/20260803/148253eacff51.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=172834247&t=board",
+      "sourceOrder": 39
     },
     {
       "id": "172834246",
@@ -93,9 +119,9 @@
       "color": "(외장) 소닉티타늄 / (내장) 헤이즐",
       "method": "개인사업자 / 리스",
       "date": "2026-07-31",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/04ae3b6bba72b.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172834246",
-      "sourceOrder": 32
+      "image": "https://cdn.imweb.me/thumbnail/20260803/f8c8e5916d066.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=172834246&t=board",
+      "sourceOrder": 40
     },
     {
       "id": "172466664",
@@ -106,9 +132,9 @@
       "color": "(외장) 베이퍼 그레이 / (내장) 아이보리 시트",
       "method": "개인 / 리스",
       "date": "2026-07-15",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/17ceec3ac4403.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172466664",
-      "sourceOrder": 51
+      "image": "https://cdn.imweb.me/thumbnail/20260716/beacdc90b4d10.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NTt9&bmode=view&idx=172466664&t=board",
+      "sourceOrder": 59
     },
     {
       "id": "172309158",
@@ -119,9 +145,9 @@
       "color": "(외장) 옵시디언 블랙 / (내장) 브라운 베이지",
       "method": "개인 / 리스",
       "date": "2026-07-08",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/4c35763417c30.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172309158",
-      "sourceOrder": 54
+      "image": "https://cdn.imweb.me/thumbnail/20260709/04b61b72b8ea2.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172309158&t=board",
+      "sourceOrder": 62
     },
     {
       "id": "172309152",
@@ -132,9 +158,9 @@
       "color": "(외장) 그라파이트 그레이 / (내장) 통카 브라운",
       "method": "법인 / 리스",
       "date": "2026-07-08",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/6b0fe3cfb50b1.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172309152",
-      "sourceOrder": 60
+      "image": "https://cdn.imweb.me/thumbnail/20260709/761c8e14062ce.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Njt9&bmode=view&idx=172309152&t=board",
+      "sourceOrder": 68
     },
     {
       "id": "172230644",
@@ -145,9 +171,9 @@
       "color": "(외장) 크레용 / (내장) 레드",
       "method": "법인 / 리스",
       "date": "2026-07-03",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/520d678c65040.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172230644",
-      "sourceOrder": 65
+      "image": "https://cdn.imweb.me/thumbnail/20260706/e7a5ef0c8a358.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172230644&t=board",
+      "sourceOrder": 73
     },
     {
       "id": "172230642",
@@ -158,9 +184,22 @@
       "color": "(외장) 화이트 / (내장) 브라운",
       "method": "법인사업자 / 리스",
       "date": "2026-07-03",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/0397ca4236bc5.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172230642",
-      "sourceOrder": 67
+      "image": "https://cdn.imweb.me/thumbnail/20260706/5ecd3f0c6f60e.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172230642&t=board",
+      "sourceOrder": 75
+    },
+    {
+      "id": "172230641",
+      "title": "돌핀 개인 리스 출고 후기입니다.",
+      "brand": "BYD",
+      "model": "색상 : (외장) 화이트 / (내장) 블랙",
+      "manager": "황대호 차장 ❤️❤️",
+      "color": "(외장) 화이트 / (내장) 블랙",
+      "method": "개인 / 리스",
+      "date": "2026-07-03",
+      "image": "https://cdn.imweb.me/thumbnail/20260706/b13e2bf453b4c.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172230641&t=board",
+      "sourceOrder": 76
     },
     {
       "id": "172150868",
@@ -171,9 +210,9 @@
       "color": "(외장) 그레이 / (내장) 블랙",
       "method": "개인 / 리스",
       "date": "2026-07-01",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/bf7e8bca0a680.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172150868",
-      "sourceOrder": 70
+      "image": "https://cdn.imweb.me/thumbnail/20260702/dfbb37c1458ea.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172150868&t=board",
+      "sourceOrder": 78
     },
     {
       "id": "172108172",
@@ -184,9 +223,9 @@
       "color": "(외장) 실버 / (내장) 젠그레이",
       "method": "법인 / 리스",
       "date": "2026-06-26",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/cb12a89e3826d.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=172108172",
-      "sourceOrder": 80
+      "image": "https://cdn.imweb.me/thumbnail/20260630/e97f3f72ff19e.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172108172&t=board",
+      "sourceOrder": 85
     },
     {
       "id": "171879623",
@@ -197,9 +236,9 @@
       "color": "(외장) 블랙, 마끼야또 / (내장) 베이지, 마그마 그레이",
       "method": "",
       "date": "2026-06-17",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/a951d76d696e2.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171879623",
-      "sourceOrder": 92
+      "image": "https://cdn.imweb.me/thumbnail/20260618/a6f56cc9c93d8.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=171879623&t=board",
+      "sourceOrder": 100
     },
     {
       "id": "171879616",
@@ -210,9 +249,9 @@
       "color": "(외장) 크리스탈 화이트 / (내장) 아이보리",
       "method": "",
       "date": "2026-06-17",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/f069b03fcdea8.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171879616",
-      "sourceOrder": 99
+      "image": "https://cdn.imweb.me/thumbnail/20260618/a098b3dffe30c.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=171879616&t=board",
+      "sourceOrder": 107
     },
     {
       "id": "171877712",
@@ -223,48 +262,9 @@
       "color": "(외장) 그라파이트 그레이 메탈릭 / (내장) 통카 브라운, 블랙",
       "method": "개인사업자 / 리스",
       "date": "2026-06-12",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/691fafb83692f.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171877712",
-      "sourceOrder": 103
-    },
-    {
-      "id": "171877634",
-      "title": "테슬라 Y 리스 출고 후기입니다.",
-      "brand": "테슬라",
-      "model": "테슬라 New Model Y",
-      "manager": "김남현 차장 ❤️❤️",
-      "color": "(외장) 블랙 / (내장) 젠그레이",
-      "method": "개인사업자 / 리스",
-      "date": "2026-05-20",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/6d9a222dea763.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171877634",
-      "sourceOrder": 126
-    },
-    {
-      "id": "171877633",
-      "title": "테슬라 Y 렌트 출고 후기입니다.",
-      "brand": "테슬라",
-      "model": "테슬라 Y",
-      "manager": "김진욱 차장 ❤️❤️",
-      "color": "(외장) 화이트 / (내장) 그레이",
-      "method": "개인 / 렌트",
-      "date": "2026-05-20",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/aad0b7939d226.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171877633",
-      "sourceOrder": 127
-    },
-    {
-      "id": "171877640",
-      "title": "벤츠 E클래스 리스 출고 후기입니다.",
-      "brand": "메르세데스-벤츠",
-      "model": "e350e",
-      "manager": "박지석 팀장 ❤️❤️",
-      "color": "(외장) 화이트 / (내장) 베이지",
-      "method": "개인 / 리스",
-      "date": "2026-05-15",
-      "image": "https://cdn.imweb.me/upload/S20260515f59171e2a5f3c/d18f34abbfd16.jpg",
-      "url": "https://www.agautoplan.com/review/?bmode=view&idx=171877640",
-      "sourceOrder": 136
+      "image": "https://cdn.imweb.me/thumbnail/20260618/480533b236202.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTA7fQ%3D%3D&bmode=view&idx=171877712&t=board",
+      "sourceOrder": 111
     }
   ]
 }
