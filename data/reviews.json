@@ -1,23 +1,49 @@
 {
   "source": "https://www.agautoplan.com/review",
-  "generatedAt": "2026-09-17T05:22:29.662Z",
+  "generatedAt": "2026-09-21T05:29:23.611Z",
   "filter": "latest-62-days-import-cars-only",
   "recentDays": 93,
   "order": "board-visible-order-newest-first",
   "count": 21,
   "reviews": [
     {
+      "id": "174566230",
+      "title": "BMW i5 개인 리스 출고 후기입니다.",
+      "brand": "BMW",
+      "model": "i5 eDrive 40 M Spt_P2",
+      "manager": "정철희 차장 ❤️❤️",
+      "color": "(외장) 카본블랙 / (내장) 스모크화이트",
+      "method": "개인 / 리스",
+      "date": "2026-09-18",
+      "image": "https://cdn.imweb.me/thumbnail/20260921/4885498120f6f.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174566230&t=board",
+      "sourceOrder": 0
+    },
+    {
+      "id": "174566229",
+      "title": "E200 개인사업자 리스 출고 후기입니다.",
+      "brand": "메르세데스-벤츠",
+      "model": "E200 AMG Line",
+      "manager": "정철희 차장 ❤️❤️",
+      "color": "(외장) 폴라화이트 / (내장) 통카브라운, 블랙",
+      "method": "개인사업자 / 리스",
+      "date": "2026-09-18",
+      "image": "https://cdn.imweb.me/thumbnail/20260921/bd491590ca7d8.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174566229&t=board",
+      "sourceOrder": 1
+    },
+    {
       "id": "174207920",
       "title": "BMW X3 개인사업자 리스 출고 후기입니다.",
       "brand": "BMW",
       "model": "X3 20 xDrive Msport",
       "manager": "정철희 차장 ❤️❤️",
-      "color": "(외장) 블루 메탈릭 / (내장) 아이보리",
-      "method": "개인사업자 / 리스",
+      "color": "",
+      "method": "",
       "date": "2026-09-15",
       "image": "https://cdn.imweb.me/thumbnail/20260916/486ae13abc6be.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174207920&t=board",
-      "sourceOrder": 0
+      "sourceOrder": 4
     },
     {
       "id": "173947780",
@@ -30,7 +56,7 @@
       "date": "2026-09-08",
       "image": "https://cdn.imweb.me/thumbnail/20260910/961fba7f46fb4.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173947780&t=board",
-      "sourceOrder": 7
+      "sourceOrder": 11
     },
     {
       "id": "173672030",
@@ -42,8 +68,8 @@
       "method": "법인사업자 / 리스",
       "date": "2026-09-02",
       "image": "https://cdn.imweb.me/thumbnail/20260903/0b5e1017b8d9f.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173672030&t=board",
-      "sourceOrder": 21
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=173672030&t=board",
+      "sourceOrder": 25
     },
     {
       "id": "173575144",
@@ -56,7 +82,7 @@
       "date": "2026-08-26",
       "image": "https://cdn.imweb.me/thumbnail/20260831/cb006b6692e76.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=173575144&t=board",
-      "sourceOrder": 29
+      "sourceOrder": 33
     },
     {
       "id": "173575142",
@@ -69,7 +95,7 @@
       "date": "2026-08-26",
       "image": "https://cdn.imweb.me/thumbnail/20260831/5cb8c3842babe.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=173575142&t=board",
-      "sourceOrder": 31
+      "sourceOrder": 35
     },
     {
       "id": "173575141",
@@ -81,8 +107,8 @@
       "method": "개인사업자 / 리스",
       "date": "2026-08-26",
       "image": "https://cdn.imweb.me/thumbnail/20260831/37ec2315960d0.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=173575141&t=board",
-      "sourceOrder": 32
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=173575141&t=board",
+      "sourceOrder": 36
     },
     {
       "id": "173244612",
@@ -95,7 +121,7 @@
       "date": "2026-08-19",
       "image": "https://cdn.imweb.me/thumbnail/20260820/b313c4f45b408.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=173244612&t=board",
-      "sourceOrder": 37
+      "sourceOrder": 41
     },
     {
       "id": "173074681",
@@ -108,7 +134,7 @@
       "date": "2026-08-12",
       "image": "https://cdn.imweb.me/thumbnail/20260813/2f548a98fa108.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=173074681&t=board",
-      "sourceOrder": 43
+      "sourceOrder": 47
     },
     {
       "id": "172991912",
@@ -120,8 +146,8 @@
       "method": "개인사업자 / 리스",
       "date": "2026-08-10",
       "image": "https://cdn.imweb.me/thumbnail/20260810/3af5132037665.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=172991912&t=board",
-      "sourceOrder": 46
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NTt9&bmode=view&idx=172991912&t=board",
+      "sourceOrder": 50
     },
     {
       "id": "172834247",
@@ -134,7 +160,7 @@
       "date": "2026-07-31",
       "image": "https://cdn.imweb.me/thumbnail/20260803/148253eacff51.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NTt9&bmode=view&idx=172834247&t=board",
-      "sourceOrder": 54
+      "sourceOrder": 58
     },
     {
       "id": "172834246",
@@ -147,7 +173,7 @@
       "date": "2026-07-31",
       "image": "https://cdn.imweb.me/thumbnail/20260803/f8c8e5916d066.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NTt9&bmode=view&idx=172834246&t=board",
-      "sourceOrder": 55
+      "sourceOrder": 59
     },
     {
       "id": "172466664",
@@ -160,7 +186,7 @@
       "date": "2026-07-15",
       "image": "https://cdn.imweb.me/thumbnail/20260716/beacdc90b4d10.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172466664&t=board",
-      "sourceOrder": 74
+      "sourceOrder": 78
     },
     {
       "id": "172309158",
@@ -173,7 +199,7 @@
       "date": "2026-07-08",
       "image": "https://cdn.imweb.me/thumbnail/20260709/04b61b72b8ea2.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172309158&t=board",
-      "sourceOrder": 77
+      "sourceOrder": 81
     },
     {
       "id": "172309152",
@@ -185,8 +211,8 @@
       "method": "법인 / 리스",
       "date": "2026-07-08",
       "image": "https://cdn.imweb.me/thumbnail/20260709/761c8e14062ce.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Nzt9&bmode=view&idx=172309152&t=board",
-      "sourceOrder": 83
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172309152&t=board",
+      "sourceOrder": 87
     },
     {
       "id": "172230644",
@@ -199,7 +225,7 @@
       "date": "2026-07-03",
       "image": "https://cdn.imweb.me/thumbnail/20260706/e7a5ef0c8a358.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172230644&t=board",
-      "sourceOrder": 88
+      "sourceOrder": 92
     },
     {
       "id": "172230642",
@@ -212,7 +238,7 @@
       "date": "2026-07-03",
       "image": "https://cdn.imweb.me/thumbnail/20260706/5ecd3f0c6f60e.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172230642&t=board",
-      "sourceOrder": 90
+      "sourceOrder": 94
     },
     {
       "id": "172230641",
@@ -225,7 +251,7 @@
       "date": "2026-07-03",
       "image": "https://cdn.imweb.me/thumbnail/20260706/b13e2bf453b4c.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172230641&t=board",
-      "sourceOrder": 91
+      "sourceOrder": 95
     },
     {
       "id": "172150868",
@@ -237,8 +263,8 @@
       "method": "개인 / 리스",
       "date": "2026-07-01",
       "image": "https://cdn.imweb.me/thumbnail/20260702/dfbb37c1458ea.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172150868&t=board",
-      "sourceOrder": 93
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172150868&t=board",
+      "sourceOrder": 97
     },
     {
       "id": "172108172",
@@ -251,33 +277,7 @@
       "date": "2026-06-26",
       "image": "https://cdn.imweb.me/thumbnail/20260630/e97f3f72ff19e.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172108172&t=board",
-      "sourceOrder": 100
-    },
-    {
-      "id": "171879623",
-      "title": "S450 리스 출고 후기입니다.",
-      "brand": "메르세데스-벤츠",
-      "model": "S450",
-      "manager": "김형원 차장 ❤️❤️",
-      "color": "(외장) 블랙, 마끼야또 / (내장) 베이지, 마그마 그레이",
-      "method": "",
-      "date": "2026-06-17",
-      "image": "https://cdn.imweb.me/thumbnail/20260618/a6f56cc9c93d8.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTA7fQ%3D%3D&bmode=view&idx=171879623&t=board",
-      "sourceOrder": 115
-    },
-    {
-      "id": "171879616",
-      "title": "XC60 렌트 출고 후기입니다.",
-      "brand": "볼보",
-      "model": "볼보 XC60",
-      "manager": "정철희 차장 ❤️❤️",
-      "color": "(외장) 크리스탈 화이트 / (내장) 아이보리",
-      "method": "",
-      "date": "2026-06-17",
-      "image": "https://cdn.imweb.me/thumbnail/20260618/a098b3dffe30c.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTE7fQ%3D%3D&bmode=view&idx=171879616&t=board",
-      "sourceOrder": 122
+      "sourceOrder": 104
     }
   ]
 }
