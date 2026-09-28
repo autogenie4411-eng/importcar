@@ -1,10 +1,10 @@
 {
   "source": "https://www.agautoplan.com/review",
-  "generatedAt": "2026-09-24T05:25:00.907Z",
+  "generatedAt": "2026-09-28T05:54:41.359Z",
   "filter": "latest-62-days-import-cars-only",
   "recentDays": 93,
   "order": "board-visible-order-newest-first",
-  "count": 21,
+  "count": 20,
   "reviews": [
     {
       "id": "174566230",
@@ -265,19 +265,6 @@
       "image": "https://cdn.imweb.me/thumbnail/20260702/dfbb37c1458ea.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172150868&t=board",
       "sourceOrder": 102
-    },
-    {
-      "id": "172108172",
-      "title": "테슬라 모델 Y 법인 리스 출고 후기입니다.",
-      "brand": "테슬라",
-      "model": "모델YL",
-      "manager": "박지석 팀장 ❤️❤️",
-      "color": "(외장) 실버 / (내장) 젠그레이",
-      "method": "법인 / 리스",
-      "date": "2026-06-26",
-      "image": "https://cdn.imweb.me/thumbnail/20260630/e97f3f72ff19e.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTA7fQ%3D%3D&bmode=view&idx=172108172&t=board",
-      "sourceOrder": 109
     }
   ]
 }
