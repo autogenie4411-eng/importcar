@@ -1385,8 +1385,8 @@ body:has(.wizard-page) {
     overflow: hidden;
 
     /* 차량 리스트 가이드 위치 - 카드 전체 기준 */
-    /* --list-guide-x1: 61%;
-    --list-guide-x2: 95.5%; */
+    --list-guide-x1: 61%;
+    --list-guide-x2: 95.5%;
 }
 .vehicle-card-item.active {
     border-color: var(--blue);
@@ -2069,6 +2069,81 @@ body:has(.wizard-page) {
     --list-car-scale-add: 0;
     --list-car-x-add: 0px;
     --list-car-y-add: 0px;
+}
+/* 포르쉐 */
+.vehicle-card-item[data-brand="포르쉐"][data-car-card="마칸"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.6;
+    --list-car-x-add: 9px;
+    --list-car-y-add: 5px;
+}
+.vehicle-card-item[data-brand="포르쉐"][data-car-card="카이엔"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.5;
+    --list-car-x-add: 10px;
+    --list-car-y-add: -7px;
+}
+.vehicle-card-item[data-brand="포르쉐"][data-car-card="카이엔 EV"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.5;
+    --list-car-x-add: 10px;
+    --list-car-y-add: -6px;
+}
+.vehicle-card-item[data-brand="포르쉐"][data-car-card="타이칸"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.4;
+    --list-car-x-add: 12px;
+    --list-car-y-add: 2px;
+}
+.vehicle-card-item[data-brand="포르쉐"][data-car-card="파나메라"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.35;
+    --list-car-x-add: 12px;
+    --list-car-y-add: -1px;
+}
+
+/* 벤틀리 */
+.vehicle-card-item[data-brand="벤틀리"][data-car-card="벤테이가"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 1;
+    --list-car-x-add: -1px;
+    --list-car-y-add: 2px;
+}
+.vehicle-card-item[data-brand="벤틀리"][data-car-card="컨티넨탈 GT"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.8;
+    --list-car-x-add: 0px;
+    --list-car-y-add: 2px;
+}
+.vehicle-card-item[data-brand="벤틀리"][data-car-card="플라잉스퍼"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 0.8;
+    --list-car-x-add: 0px;
+    --list-car-y-add: -3px;
+}
+
+/* 롤스로이스 */
+.vehicle-card-item[data-brand="롤스로이스"][data-car-card="스펙터"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 2;
+    --list-car-x-add: 1px;
+    --list-car-y-add: -28px;
+}
+.vehicle-card-item[data-brand="롤스로이스"][data-car-card="팬텀"]
+    .vehicle-card-item__thumb
+    img {
+    --list-car-scale-add: 2.2;
+    --list-car-x-add: 8px;
+    --list-car-y-add: -22px;
 }
 /* === AUTO GENERATED: IMPORT LIST CAR ADJUSTMENTS END === */
 
@@ -2976,14 +3051,14 @@ body:has(.wizard-page) {
 /* 이미지 크기 가이드라인 */
 :root {
     /* 데스크탑용 */
-    /* --car-guide-x1: 14%;
+    --car-guide-x1: 14%;
     --car-guide-x2: 86%;
-    --car-guide-bottom: 33px; */
+    --car-guide-bottom: 33px;
 
     /* 모바일용 */
-    /* --car-guide-x1: 12%;
+    --car-guide-x1: 12%;
     --car-guide-x2: 88%;
-    --car-guide-bottom: 40px; */
+    --car-guide-bottom: 40px;
 }
 
 .wizard-car-image {
@@ -6307,6 +6382,82 @@ body.loader-active {
     --car-scale-add: -0.1;
     --car-x-add: 0%;
     --car-y-add: 3%;
+}
+/* 포르쉐 - 하단 이미지 공통 크기/위치 */
+.car-adjust[data-brand="포르쉐"] {
+    --brand-scale: 1;
+    --brand-x: 0%;
+    --brand-y: 0%;
+}
+
+/* 포르쉐 - 하단 이미지 차량별 추가 보정 */
+.car-adjust[data-brand="포르쉐"][data-car="마칸"] {
+    --car-scale-add: 0.2;
+    --car-x-add: 4%;
+    --car-y-add: 20%;
+}
+.car-adjust[data-brand="포르쉐"][data-car="카이엔"] {
+    --car-scale-add: 0.2;
+    --car-x-add: 5%;
+    --car-y-add: 9%;
+}
+.car-adjust[data-brand="포르쉐"][data-car="카이엔 EV"] {
+    --car-scale-add: 0.18;
+    --car-x-add: 5.5%;
+    --car-y-add: 9%;
+}
+.car-adjust[data-brand="포르쉐"][data-car="타이칸"] {
+    --car-scale-add: 0.15;
+    --car-x-add: 6.5%;
+    --car-y-add: 14%;
+}
+.car-adjust[data-brand="포르쉐"][data-car="파나메라"] {
+    --car-scale-add: 0.15;
+    --car-x-add: 6.5%;
+    --car-y-add: 14%;
+}
+
+/* 벤틀리 - 하단 이미지 공통 크기/위치 */
+.car-adjust[data-brand="벤틀리"] {
+    --brand-scale: 1;
+    --brand-x: 0%;
+    --brand-y: 0%;
+}
+
+/* 벤틀리 - 하단 이미지 차량별 추가 보정 */
+.car-adjust[data-brand="벤틀리"][data-car="벤테이가"] {
+    --car-scale-add: 0.5;
+    --car-x-add: 0%;
+    --car-y-add: 30%;
+}
+.car-adjust[data-brand="벤틀리"][data-car="컨티넨탈 GT"] {
+    --car-scale-add: 0.41;
+    --car-x-add: 1%;
+    --car-y-add: 30%;
+}
+.car-adjust[data-brand="벤틀리"][data-car="플라잉스퍼"] {
+    --car-scale-add: 0.43;
+    --car-x-add: 1%;
+    --car-y-add: 25%;
+}
+
+/* 롤스로이스 - 하단 이미지 공통 크기/위치 */
+.car-adjust[data-brand="롤스로이스"] {
+    --brand-scale: 1;
+    --brand-x: 0%;
+    --brand-y: 0%;
+}
+
+/* 롤스로이스 - 하단 이미지 차량별 추가 보정 */
+.car-adjust[data-brand="롤스로이스"][data-car="스펙터"] {
+    --car-scale-add: 0.12;
+    --car-x-add: 0.5%;
+    --car-y-add: 3%;
+}
+.car-adjust[data-brand="롤스로이스"][data-car="팬텀"] {
+    --car-scale-add: 0.07;
+    --car-x-add: -3.5%;
+    --car-y-add: 6%;
 }
 /* === AUTO GENERATED: IMPORT DETAIL CAR ADJUSTMENTS END === */
 
