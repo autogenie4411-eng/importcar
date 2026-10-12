@@ -3049,17 +3049,15 @@ body:has(.wizard-page) {
    페이지 세부 디자인 및 기능 보정
 ========================================================= */
 /* 이미지 크기 가이드라인 */
-:root {
-    /* 데스크탑용 */
-    /* --car-guide-x1: 14%;
+/* :root {
+    --car-guide-x1: 14%;
     --car-guide-x2: 86%;
-    --car-guide-bottom: 33px; */
+    --car-guide-bottom: 33px;
 
-    /* 모바일용 */
-    /* --car-guide-x1: 12%;
+    --car-guide-x1: 12%;
     --car-guide-x2: 88%;
-    --car-guide-bottom: 40px; */
-}
+    --car-guide-bottom: 40px;
+} */
 
 .wizard-car-image {
     position: relative !important;
@@ -6613,6 +6611,7 @@ body.loader-active {
     font-weight: 800;
     line-height: 1.45;
     letter-spacing: -0.025em;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
