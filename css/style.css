@@ -1385,8 +1385,8 @@ body:has(.wizard-page) {
     overflow: hidden;
 
     /* 차량 리스트 가이드 위치 - 카드 전체 기준 */
-    --list-guide-x1: 61%;
-    --list-guide-x2: 95.5%;
+    /* --list-guide-x1: 61%;
+    --list-guide-x2: 95.5%; */
 }
 .vehicle-card-item.active {
     border-color: var(--blue);
