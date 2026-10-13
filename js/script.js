@@ -7141,6 +7141,47 @@ const vehicleCatalog = [
     submitted: false
   };
 
+  // Keep wizard transitions in the browser's session history.
+  const wizardHistoryKey = "autogenieImportWizardV1";
+  let wizardHistoryIndex = 0;
+
+  function wizardHistoryEntry(index) {
+    return { [wizardHistoryKey]: true, index, snapshot: { ...state } };
+  }
+
+  function rememberWizardState() {
+    if (window.history.state?.[wizardHistoryKey]) {
+      window.history.replaceState(wizardHistoryEntry(wizardHistoryIndex), "", window.location.href);
+    }
+  }
+
+  function recordWizardNavigation(previousSnapshot) {
+    if (previousSnapshot && window.history.state?.[wizardHistoryKey]) {
+      window.history.replaceState({ [wizardHistoryKey]: true, index: wizardHistoryIndex, snapshot: previousSnapshot }, "", window.location.href);
+    } else {
+      rememberWizardState();
+    }
+    wizardHistoryIndex += 1;
+    window.history.pushState(wizardHistoryEntry(wizardHistoryIndex), "", window.location.href);
+  }
+
+  const restoredWizardEntry = window.history.state;
+  if (restoredWizardEntry?.[wizardHistoryKey] && restoredWizardEntry.snapshot) {
+    Object.assign(state, restoredWizardEntry.snapshot);
+    wizardHistoryIndex = restoredWizardEntry.index || 0;
+  } else {
+    window.history.replaceState(wizardHistoryEntry(0), "", window.location.href);
+  }
+
+  window.addEventListener("popstate", event => {
+    const entry = event.state;
+    if (!entry?.[wizardHistoryKey] || !entry.snapshot) return;
+    Object.assign(state, entry.snapshot);
+    wizardHistoryIndex = entry.index || 0;
+    render();
+    scrollToEstimate();
+  });
+
   const content = document.getElementById("wizardContent");
   const indicator = document.getElementById("stepIndicator");
   const actions = document.getElementById("wizardActions");
@@ -7460,6 +7501,11 @@ function paintSwatchStyle(paint) {
     `;
   }
 
+  // 세부모델 자체가 최종 트림인 브랜드는 하위 트림을 선택하지 않습니다.
+  function hasNoSubTrim() {
+    return ["포르쉐", "벤틀리", "롤스로이스"].includes(state.brandName);
+  }
+
   function renderStepTwo() {
     const vehicle = currentVehicle();
     const modelGroups = Array.isArray(vehicle?.detailModels) ? vehicle.detailModels : [];
@@ -7469,7 +7515,7 @@ function paintSwatchStyle(paint) {
         <div class="step-heading">
           <span>STEP 02</span>
           <h2>세부 모델을 선택해 주세요.</h2>
-          <p>원하는 엔진과 트림을 차례대로 선택해 주세요.</p>
+          <p>${hasNoSubTrim() ? "원하는 세부모델을 선택해 주세요." : "원하는 엔진과 트림을 차례대로 선택해 주세요."}</p>
         </div>
 
         <fieldset class="option-block no-gap" data-option-section="engine-model">
@@ -7486,7 +7532,7 @@ function paintSwatchStyle(paint) {
                     <span class="radio-ui ${isActive ? "checked" : ""}" aria-hidden="true"></span>
                   </button>
 
-                  ${isActive ? `
+                  ${isActive && !hasNoSubTrim() ? `
                     <div class="sub-trim-list" data-option-section="sub-trim">
                       ${group.trims.map(item => `
                         <button class="sub-trim-item ${item === state.subTrim ? "active" : ""}" type="button" data-sub-trim="${item}">
@@ -8250,6 +8296,7 @@ function paintSwatchStyle(paint) {
       state.brandName !== nextBrandName ||
       state.carName !== nextCarName;
 
+    const previousSnapshot = { ...state };
     state.market = nextMarket;
     state.brandName = nextBrandName;
     state.carName = nextCarName;
@@ -8257,6 +8304,7 @@ function paintSwatchStyle(paint) {
     state.step = 1;
 
     if (vehicleChanged) resetSelectionsAfterVehicleChange();
+    recordWizardNavigation(previousSnapshot);
 
     vehicleSearchModal?.close();
     render();
@@ -8278,6 +8326,7 @@ function paintSwatchStyle(paint) {
   }
 
   function resetWizardToStart() {
+    const previousSnapshot = { ...state };
     // 이전 견적 전송 과정에서 잠긴 버튼 상태까지 완전히 초기화합니다.
     nextButton.disabled = false;
     nextButton.classList.remove("is-submitting");
@@ -8302,6 +8351,7 @@ function paintSwatchStyle(paint) {
     state.customerPhone = "";
     state.contactMethod = "";
     state.submitted = false;
+    recordWizardNavigation(previousSnapshot);
     render();
 
     // 브랜드/차량 선택을 초기화했으므로 첫 화면용 후기 영역도 다시 표시합니다.
@@ -8416,8 +8466,10 @@ function paintSwatchStyle(paint) {
   function moveToConsultStep() {
     // 1·2단계에서 바로 견적 신청을 선택하면 정보입력 단계로 이동합니다.
     // 선택하지 않은 항목은 STEP 04 요약에서 "상담 후 결정"으로 표시합니다.
+    const previousSnapshot = { ...state };
     state.step = 4;
     state.maxReachedStep = Math.max(state.maxReachedStep, 4);
+    recordWizardNavigation(previousSnapshot);
     render();
     scrollToEstimate();
   }
@@ -8444,7 +8496,7 @@ function paintSwatchStyle(paint) {
         showValidation("세부 모델을 선택해 주세요.");
         return false;
       }
-      if (!state.subTrim) {
+      if (!hasNoSubTrim() && !state.subTrim) {
         showValidation("트림을 선택해 주세요.");
         return false;
       }
@@ -8554,7 +8606,7 @@ function paintSwatchStyle(paint) {
       vehicle: state.carName || pendingText,
       exteriorColor: paint?.name || pendingText,
       model: state.trim || pendingText,
-      trim: getTrimTextForMail(state.subTrim || pendingText),
+      trim: hasNoSubTrim() ? (state.trim || pendingText) : getTrimTextForMail(state.subTrim || pendingText),
       usageType: state.usage || pendingText,
       initialCostType: state.initialCost || pendingText,
       initialCostRate: !state.initialCost || ["초기비용 0원", pendingText].includes(state.initialCost)
@@ -8642,14 +8694,22 @@ function paintSwatchStyle(paint) {
     if (!Number.isInteger(targetStep)) return;
     if (targetStep > state.maxReachedStep) return;
 
+    const previousSnapshot = { ...state };
     state.step = targetStep;
+    recordWizardNavigation(previousSnapshot);
     render();
     scrollToEstimate();
   });
 
   backButton.addEventListener("click", () => {
     if (state.step > 1) {
+      if (wizardHistoryIndex > 0) {
+        window.history.back();
+        return;
+      }
+      const previousSnapshot = { ...state };
       state.step -= 1;
+      recordWizardNavigation(previousSnapshot);
       render();
       scrollToEstimate();
     }
@@ -8663,8 +8723,10 @@ function paintSwatchStyle(paint) {
     if (!validateCurrentStep()) return;
 
     if (state.step < 4) {
+      const previousSnapshot = { ...state };
       state.step += 1;
       state.maxReachedStep = Math.max(state.maxReachedStep, state.step);
+      recordWizardNavigation(previousSnapshot);
       render();
       scrollToEstimate();
       return;
