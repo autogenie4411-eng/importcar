@@ -5548,105 +5548,105 @@ const vehicleCatalog = [
           "name": "돌로마이트 실버 메탈릭",
           "hex": "#898b9a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-돌로마이트 실버 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-돌로마이트 실버 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-2",
           "name": "루가노 블루",
           "hex": "#0061bb",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-루가노 블루.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-루가노 블루.webp"
         },
         {
           "id": "paint-luxury-1-1-3",
           "name": "볼케이노 그레이 메탈릭",
           "hex": "#2a292a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-볼케이노 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-볼케이노 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-4",
           "name": "블랙",
           "hex": "#080504",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-블랙.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-블랙.webp"
         },
         {
           "id": "paint-luxury-1-1-5",
           "name": "슬레이트 그레이 네오",
           "hex": "#636571",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-슬레이트 그레이 네오.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-슬레이트 그레이 네오.webp"
         },
         {
           "id": "paint-luxury-1-1-6",
           "name": "아이스 그레이 메탈릭",
           "hex": "#a8a3ad",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-아이스 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-아이스 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-7",
           "name": "어벤추린 그린 메탈릭",
           "hex": "#646055",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-어벤추린 그린 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-어벤추린 그린 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-8",
           "name": "오크 그린 메탈릭 네오",
           "hex": "#30552a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-오크 그린 메탈릭 네오.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-오크 그린 메탈릭 네오.webp"
         },
         {
           "id": "paint-luxury-1-1-9",
           "name": "제트 블랙 메탈릭",
           "hex": "#141313",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-제트 블랙 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-제트 블랙 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-10",
           "name": "젠션 블루 메탈릭",
           "hex": "#213981",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-젠션 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-젠션 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-11",
           "name": "카민 레드",
           "hex": "#92000c",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-카민 레드.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-카민 레드.webp"
         },
         {
           "id": "paint-luxury-1-1-12",
           "name": "크레용",
           "hex": "#a8a39f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-크레용.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-크레용.webp"
         },
         {
           "id": "paint-luxury-1-1-13",
           "name": "프로방스",
           "hex": "#766b7f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-프로방스.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-프로방스.webp"
         },
         {
           "id": "paint-luxury-1-1-14",
           "name": "프로즌블루 메탈릭",
           "hex": "#6a9ab4",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-프로즌블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-프로즌블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-1-15",
           "name": "화이트",
           "hex": "#cecccc",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/마칸-화이트.jpeg"
+          "image": "images/vehicles/포르쉐/마칸-화이트.webp"
         }
       ]
     },
@@ -5666,63 +5666,63 @@ const vehicleCatalog = [
           "name": "돌로마이트 실버 메탈릭",
           "hex": "#626473",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-돌로마이트 실버 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-돌로마이트 실버 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-2-2",
           "name": "바나듐 그레이 메탈릭",
           "hex": "#515665",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-바나듐 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-바나듐 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-2-3",
           "name": "아크틱 그레이",
           "hex": "#575562",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-아크틱 그레이.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-아크틱 그레이.webp"
         },
         {
           "id": "paint-luxury-1-2-4",
           "name": "알가르브 블루 메탈릭",
           "hex": "#070913",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-알가르브 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-알가르브 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-2-5",
           "name": "카라라 화이트 메탈릭",
           "hex": "#d2cfd2",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-카라라 화이트 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-카라라 화이트 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-2-6",
           "name": "카민 레드",
           "hex": "#9f000d",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-카민 레드.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-카민 레드.webp"
         },
         {
           "id": "paint-luxury-1-2-7",
           "name": "크레용",
           "hex": "#a7a29e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-크레용.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-크레용.webp"
         },
         {
           "id": "paint-luxury-1-2-8",
           "name": "크로마이트 블랙 메탈릭",
           "hex": "#141518",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-크로마이트 블랙 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-크로마이트 블랙 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-2-9",
           "name": "화이트",
           "hex": "#ccc8c9",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔-화이트.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔-화이트.webp"
         }
       ]
     },
@@ -5754,91 +5754,91 @@ const vehicleCatalog = [
           "name": "나팔리 블루 메탈릭",
           "hex": "#244064",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-나팔리 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-나팔리 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-2",
           "name": "돌로마이트 실버 메탈릭",
           "hex": "#b9bac0",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-돌로마이트 실버 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-돌로마이트 실버 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-3",
           "name": "마데이라 골드 메탈릭",
           "hex": "#bb7b11",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-마데이라 골드 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-마데이라 골드 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-4",
           "name": "몬테베르데 메탈릭",
           "hex": "#7e765d",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-몬테베르데 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-몬테베르데 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-5",
           "name": "미스틱 그린 메탈릭",
           "hex": "#7b8c84",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-미스틱 그린 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-미스틱 그린 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-6",
           "name": "바나듐 그레이 메탈릭",
           "hex": "#63666b",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-바나듐 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-바나듐 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-7",
           "name": "슬레이트 그레이 네오",
           "hex": "#666666",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-슬레이트 그레이 네오.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-슬레이트 그레이 네오.webp"
         },
         {
           "id": "paint-luxury-1-3-8",
           "name": "오크 그린 메탈릭 네오",
           "hex": "#314b2e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-오크 그린 메탈릭 네오.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-오크 그린 메탈릭 네오.webp"
         },
         {
           "id": "paint-luxury-1-3-9",
           "name": "일가르브 블루 메탈릭",
           "hex": "#363f50",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-일가르브 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-일가르브 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-10",
           "name": "카라라 화이트 메탈릭",
           "hex": "#e4e2dc",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-카라라 화이트 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-카라라 화이트 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-11",
           "name": "크로마이트 블랙 메탈릭",
           "hex": "#2b2c2f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-크로마이트 블랙 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-크로마이트 블랙 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-12",
           "name": "페일 블루 메탈릭",
           "hex": "#485e6a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-페일 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-페일 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-3-13",
           "name": "화이트",
           "hex": "#e8e8e6",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/카이엔 EV-화이트.jpeg"
+          "image": "images/vehicles/포르쉐/카이엔 EV-화이트.webp"
         }
       ]
     },
@@ -5890,126 +5890,126 @@ const vehicleCatalog = [
           "name": "페일 블루 메탈릭",
           "hex": "#344a5f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸 페일 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-페일 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-2",
           "name": "넵튠 블루",
           "hex": "#054572",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-넵튠 블루.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-넵튠 블루.webp"
         },
         {
           "id": "paint-luxury-1-4-3",
           "name": "돌로마이트 실버 메탈릭",
           "hex": "#9c9ca8",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-돌로마이트 실버 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-돌로마이트 실버 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-4",
           "name": "볼케이노 그레이 메탈릭",
           "hex": "#454449",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-볼케이노 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-볼케이노 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-5",
           "name": "블랙",
           "hex": "#0a0c0f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-블랙.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-블랙.webp"
         },
         {
           "id": "paint-luxury-1-4-6",
           "name": "셰이드 그린 메탈릭",
           "hex": "#9ab6aa",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-셰이드 그린 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-셰이드 그린 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-7",
           "name": "슬레이트 그레이 네오",
           "hex": "#7b818c",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-슬레이트 그레이 네오.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-슬레이트 그레이 네오.webp"
         },
         {
           "id": "paint-luxury-1-4-8",
           "name": "아이스 그레이 메탈릭",
           "hex": "#d2cdd0",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-아이스 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-아이스 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-9",
           "name": "오크 그린 메탈릭 네오",
           "hex": "#435143",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-오크 그린 메탈릭 네오.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-오크 그린 메탈릭 네오.webp"
         },
         {
           "id": "paint-luxury-1-4-10",
           "name": "제트 블랙 메탈릭",
           "hex": "#514d4c",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-제트 블랙 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-제트 블랙 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-11",
           "name": "젠션 블루 메탈릭",
           "hex": "#515f85",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-젠션 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-젠션 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-12",
           "name": "카민 레드",
           "hex": "#b82833",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-카민 레드.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-카민 레드.webp"
         },
         {
           "id": "paint-luxury-1-4-13",
           "name": "크레용",
           "hex": "#beb4ab",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-크레용.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-크레용.webp"
         },
         {
           "id": "paint-luxury-1-4-14",
           "name": "퍼플 스카이 메탈릭",
           "hex": "#481f99",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-퍼플 스카이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-퍼플 스카이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-15",
           "name": "프로방스",
           "hex": "#8c8092",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-프로방스.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-프로방스.webp"
         },
         {
           "id": "paint-luxury-1-4-16",
           "name": "프로즌베리 메탈릭",
           "hex": "#a48685",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-프로즌베리 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-프로즌베리 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-17",
           "name": "프로즌블루 메탈릭",
           "hex": "#7dadc5",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-프로즌블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-프로즌블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-4-18",
           "name": "화이트",
           "hex": "#dfd9d9",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/타이칸-화이트.jpeg"
+          "image": "images/vehicles/포르쉐/타이칸-화이트.webp"
         }
       ]
     },
@@ -6030,112 +6030,112 @@ const vehicleCatalog = [
           "name": "돌로마이트 실버 메탈릭",
           "hex": "#9294a1",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-돌로마이트 실버 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-돌로마이트 실버 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-2",
           "name": "루가노 블루",
           "hex": "#0062b3",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-루가노 블루.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-루가노 블루.webp"
         },
         {
           "id": "paint-luxury-1-5-3",
           "name": "마데이라 골드 메탈릭",
           "hex": "#9a6534",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-마데이라 골드 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-마데이라 골드 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-4",
           "name": "볼케이노 그레이 메탈릭",
           "hex": "#494b51",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-볼케이노 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-볼케이노 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-5",
           "name": "블랙",
           "hex": "#1c2227",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-블랙.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-블랙.webp"
         },
         {
           "id": "paint-luxury-1-5-6",
           "name": "슬레이트 그레이 네오",
           "hex": "#65656f",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-슬레이트 그레이 네오.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-슬레이트 그레이 네오.webp"
         },
         {
           "id": "paint-luxury-1-5-7",
           "name": "아이스 그레이 메탈릭",
           "hex": "#d9d4d9",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-아이스 그레이 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-아이스 그레이 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-8",
           "name": "어벤추린 그린 메탈릭",
           "hex": "#6a6761",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-어벤추린 그린 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-어벤추린 그린 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-9",
           "name": "오크 그린 메탈릭 네오",
           "hex": "#254327",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-오크 그린 메탈릭 네오.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-오크 그린 메탈릭 네오.webp"
         },
         {
           "id": "paint-luxury-1-5-10",
           "name": "제트 블랙 메탈릭",
           "hex": "#12141a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-제트 블랙 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-제트 블랙 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-11",
           "name": "젠션 블루 메탈릭",
           "hex": "#172a66",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-젠션 블루 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-젠션 블루 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-12",
           "name": "카라라 화이트 메탈릭",
           "hex": "#e3e1e2",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-카라라 화이트 메탈릭.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-카라라 화이트 메탈릭.webp"
         },
         {
           "id": "paint-luxury-1-5-13",
           "name": "카민 레드",
           "hex": "#bf353d",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-카민 레드.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-카민 레드.webp"
         },
         {
           "id": "paint-luxury-1-5-14",
           "name": "크레용",
           "hex": "#c0b8af",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-크레용.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-크레용.webp"
         },
         {
           "id": "paint-luxury-1-5-15",
           "name": "프로방스",
           "hex": "#8c7f91",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-프로방스.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-프로방스.webp"
         },
         {
           "id": "paint-luxury-1-5-16",
           "name": "화이트",
           "hex": "#f3f2ed",
           "border": "#cfd5dc",
-          "image": "images/vehicles/포르쉐/파나메라-화이트.jpeg"
+          "image": "images/vehicles/포르쉐/파나메라-화이트.webp"
         }
       ]
     }
@@ -6163,84 +6163,84 @@ const vehicleCatalog = [
           "name": "그래나이트",
           "hex": "#333331",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-그래나이트.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-그래나이트.webp"
         },
         {
           "id": "paint-luxury-2-1-2",
           "name": "그래비티 그레이",
           "hex": "#707271",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-그래비티 그레이.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-그래비티 그레이.webp"
         },
         {
           "id": "paint-luxury-2-1-3",
           "name": "글래시어 화이트",
           "hex": "#d4d5ce",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-글래시어 화이트.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-글래시어 화이트.webp"
         },
         {
           "id": "paint-luxury-2-1-4",
           "name": "다크 사파이어",
           "hex": "#151619",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-다크 사파이어.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-다크 사파이어.webp"
         },
         {
           "id": "paint-luxury-2-1-5",
           "name": "문빔",
           "hex": "#bcc1c4",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-문빔.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-문빔.webp"
         },
         {
           "id": "paint-luxury-2-1-6",
           "name": "버던트",
           "hex": "#33433e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-버던트.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-버던트.webp"
         },
         {
           "id": "paint-luxury-2-1-7",
           "name": "벨루가",
           "hex": "#040605",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-벨루가.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-벨루가.webp"
         },
         {
           "id": "paint-luxury-2-1-8",
           "name": "세인트 제임스 레드",
           "hex": "#820000",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-세인트 제임스 레드.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-세인트 제임스 레드.webp"
         },
         {
           "id": "paint-luxury-2-1-9",
           "name": "썬더",
           "hex": "#2a3033",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-썬더.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-썬더.webp"
         },
         {
           "id": "paint-luxury-2-1-10",
           "name": "오닉스",
           "hex": "#0d0d0d",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-오닉스.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-오닉스.webp"
         },
         {
           "id": "paint-luxury-2-1-11",
           "name": "오팔라이트",
           "hex": "#899287",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-오팔라이트.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-오팔라이트.webp"
         },
         {
           "id": "paint-luxury-2-1-12",
           "name": "포르토피노",
           "hex": "#2e4a61",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/벤테이가-포르토피노.jpg"
+          "image": "images/vehicles/벤틀리/벤테이가-포르토피노.webp"
         }
       ]
     },
@@ -6263,49 +6263,49 @@ const vehicleCatalog = [
           "name": "글래시어 화이트",
           "hex": "#cacbc2",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-글래시어 화이트.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-글래시어 화이트.webp"
         },
         {
           "id": "paint-luxury-2-2-2",
           "name": "다크 사파이어",
           "hex": "#0f1114",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-다크 사파이어.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-다크 사파이어.webp"
         },
         {
           "id": "paint-luxury-2-2-3",
           "name": "문빔",
           "hex": "#9ea3a7",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-문빔.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-문빔.webp"
         },
         {
           "id": "paint-luxury-2-2-4",
           "name": "벨루가",
           "hex": "#0b0d0c",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-벨루가.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-벨루가.webp"
         },
         {
           "id": "paint-luxury-2-2-5",
           "name": "세인트 제임스 레드",
           "hex": "#830005",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-세인트 제임스 레드.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-세인트 제임스 레드.webp"
         },
         {
           "id": "paint-luxury-2-2-6",
           "name": "썬더",
           "hex": "#394045",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-썬더.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-썬더.webp"
         },
         {
           "id": "paint-luxury-2-2-7",
           "name": "오닉스",
           "hex": "#111111",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/컨티넨탈 GT-오닉스.jpg"
+          "image": "images/vehicles/벤틀리/컨티넨탈 GT-오닉스.webp"
         }
       ]
     },
@@ -6326,77 +6326,77 @@ const vehicleCatalog = [
           "name": "그래나이트",
           "hex": "#4a4a48",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-그래나이트.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-그래나이트.webp"
         },
         {
           "id": "paint-luxury-2-3-2",
           "name": "그래비티 그레이",
           "hex": "#525454",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-그래비티 그레이.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-그래비티 그레이.webp"
         },
         {
           "id": "paint-luxury-2-3-3",
           "name": "글래시어 화이트",
           "hex": "#dadbd5",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-글래시어 화이트.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-글래시어 화이트.webp"
         },
         {
           "id": "paint-luxury-2-3-4",
           "name": "다크 사파이어",
           "hex": "#353738",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-다크 사파이어.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-다크 사파이어.webp"
         },
         {
           "id": "paint-luxury-2-3-5",
           "name": "문빔",
           "hex": "#cdd3d5",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-문빔.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-문빔.webp"
         },
         {
           "id": "paint-luxury-2-3-6",
           "name": "벨루가",
           "hex": "#202221",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-벨루가.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-벨루가.webp"
         },
         {
           "id": "paint-luxury-2-3-7",
           "name": "비리디언",
           "hex": "#2f3535",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-비리디언.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-비리디언.webp"
         },
         {
           "id": "paint-luxury-2-3-8",
           "name": "세인트 제임스 레드",
           "hex": "#930008",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-세인트 제임스 레드.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-세인트 제임스 레드.webp"
         },
         {
           "id": "paint-luxury-2-3-9",
           "name": "썬더",
           "hex": "#3d4448",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-썬더.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-썬더.webp"
         },
         {
           "id": "paint-luxury-2-3-10",
           "name": "오닉스",
           "hex": "#323232",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-오닉스.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-오닉스.webp"
         },
         {
           "id": "paint-luxury-2-3-11",
           "name": "포르토피노",
           "hex": "#3d6080",
           "border": "#cfd5dc",
-          "image": "images/vehicles/벤틀리/플라잉스퍼-포르토피노.jpg"
+          "image": "images/vehicles/벤틀리/플라잉스퍼-포르토피노.webp"
         }
       ]
     }
@@ -6517,91 +6517,91 @@ const vehicleCatalog = [
           "name": "다크 에메랄드",
           "hex": "#183b2b",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-다크 에메랄드.png"
+          "image": "images/vehicles/롤스로이스/팬텀-다크 에메랄드.webp"
         },
         {
           "id": "paint-luxury-3-2-2",
           "name": "다키스트 텅스텐",
           "hex": "#252c35",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-다키스트 텅스텐.png"
+          "image": "images/vehicles/롤스로이스/팬텀-다키스트 텅스텐.webp"
         },
         {
           "id": "paint-luxury-3-2-3",
           "name": "리리컬 코퍼",
           "hex": "#25242b",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-리리컬 코퍼.png"
+          "image": "images/vehicles/롤스로이스/팬텀-리리컬 코퍼.webp"
         },
         {
           "id": "paint-luxury-3-2-4",
           "name": "미드나이트 사파이어",
           "hex": "#132b4a",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-미드나이트 사파이어.png"
+          "image": "images/vehicles/롤스로이스/팬텀-미드나이트 사파이어.webp"
         },
         {
           "id": "paint-luxury-3-2-5",
           "name": "벨라돈나 퍼플",
           "hex": "#32283e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-벨라돈나 퍼플.png"
+          "image": "images/vehicles/롤스로이스/팬텀-벨라돈나 퍼플.webp"
         },
         {
           "id": "paint-luxury-3-2-6",
           "name": "보헤미안 레드",
           "hex": "#351b24",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-보헤미안 레드.png"
+          "image": "images/vehicles/롤스로이스/팬텀-보헤미안 레드.webp"
         },
         {
           "id": "paint-luxury-3-2-7",
           "name": "블랙 다이아몬드",
           "hex": "#1b1f24",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-블랙 다이아몬드.png"
+          "image": "images/vehicles/롤스로이스/팬텀-블랙 다이아몬드.webp"
         },
         {
           "id": "paint-luxury-3-2-8",
           "name": "실버",
           "hex": "#a5a9aa",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-실버.png"
+          "image": "images/vehicles/롤스로이스/팬텀-실버.webp"
         },
         {
           "id": "paint-luxury-3-2-9",
           "name": "앤드러사이트",
           "hex": "#31343e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-앤드러사이트.png"
+          "image": "images/vehicles/롤스로이스/팬텀-앤드러사이트.webp"
         },
         {
           "id": "paint-luxury-3-2-10",
           "name": "이과수 블루",
           "hex": "#42586e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-이과수 블루.png"
+          "image": "images/vehicles/롤스로이스/팬텀-이과수 블루.webp"
         },
         {
           "id": "paint-luxury-3-2-11",
           "name": "잉글리시 화이트",
           "hex": "#dbdddc",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-잉글리시 화이트.png"
+          "image": "images/vehicles/롤스로이스/팬텀-잉글리시 화이트.webp"
         },
         {
           "id": "paint-luxury-3-2-12",
           "name": "주빌리 실버",
           "hex": "#6d7174",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-주빌리 실버.png"
+          "image": "images/vehicles/롤스로이스/팬텀-주빌리 실버.webp"
         },
         {
           "id": "paint-luxury-3-2-13",
           "name": "템페스트 그레이",
           "hex": "#62676e",
           "border": "#cfd5dc",
-          "image": "images/vehicles/롤스로이스/팬텀-템페스트 그레이.png"
+          "image": "images/vehicles/롤스로이스/팬텀-템페스트 그레이.webp"
         }
       ]
     }
