@@ -1,9 +1,8 @@
 {
   "source": "https://www.agautoplan.com/review",
   "generatedAt": "2026-09-07T00:46:02.694Z",
-  "filter": "latest-62-days-import-cars-only",
-  "recentDays": 93,
-  "order": "board-visible-order-newest-first",
+  "retentionStart": "2026-01-01",
+  "order": "date-descending-board-order-for-ties",
   "count": 20,
   "reviews": [
     {
@@ -17,7 +16,20 @@
       "date": "2026-09-02",
       "image": "https://cdn.imweb.me/thumbnail/20260903/0b5e1017b8d9f.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173672030&t=board",
-      "sourceOrder": 6
+      "sourceOrder": 3
+    },
+    {
+      "id": "173575142",
+      "title": "BMW X7 개인사업자 리스 출고 후기입니다.",
+      "brand": "BMW",
+      "model": "BMW X7 DPE",
+      "manager": "박정훈 차장 ❤️❤️",
+      "color": "(외장) 화이트 / (내장) 메리노 블랙",
+      "method": "개인사업자 / 리스",
+      "date": "2026-08-26",
+      "image": "https://cdn.imweb.me/thumbnail/20260831/5cb8c3842babe.jpg",
+      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575142&t=board",
+      "sourceOrder": 13
     },
     {
       "id": "173575144",
@@ -33,19 +45,6 @@
       "sourceOrder": 14
     },
     {
-      "id": "173575142",
-      "title": "BMW X7 개인사업자 리스 출고 후기입니다.",
-      "brand": "BMW",
-      "model": "BMW X7 DPE",
-      "manager": "박정훈 차장 ❤️❤️",
-      "color": "(외장) 화이트 / (내장) 메리노 블랙",
-      "method": "개인사업자 / 리스",
-      "date": "2026-08-26",
-      "image": "https://cdn.imweb.me/thumbnail/20260831/5cb8c3842babe.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575142&t=board",
-      "sourceOrder": 16
-    },
-    {
       "id": "173575141",
       "title": "BMW i4 개인사업자 리스 출고 후기입니다.",
       "brand": "BMW",
@@ -56,7 +55,7 @@
       "date": "2026-08-26",
       "image": "https://cdn.imweb.me/thumbnail/20260831/37ec2315960d0.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173575141&t=board",
-      "sourceOrder": 17
+      "sourceOrder": 14
     },
     {
       "id": "173244612",
@@ -69,7 +68,7 @@
       "date": "2026-08-19",
       "image": "https://cdn.imweb.me/thumbnail/20260820/b313c4f45b408.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mjt9&bmode=view&idx=173244612&t=board",
-      "sourceOrder": 22
+      "sourceOrder": 19
     },
     {
       "id": "173074681",
@@ -95,7 +94,7 @@
       "date": "2026-08-10",
       "image": "https://cdn.imweb.me/thumbnail/20260810/3af5132037665.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6Mzt9&bmode=view&idx=172991912&t=board",
-      "sourceOrder": 31
+      "sourceOrder": 28
     },
     {
       "id": "172834247",
@@ -108,7 +107,7 @@
       "date": "2026-07-31",
       "image": "https://cdn.imweb.me/thumbnail/20260803/148253eacff51.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=172834247&t=board",
-      "sourceOrder": 39
+      "sourceOrder": 36
     },
     {
       "id": "172834246",
@@ -121,7 +120,7 @@
       "date": "2026-07-31",
       "image": "https://cdn.imweb.me/thumbnail/20260803/f8c8e5916d066.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6NDt9&bmode=view&idx=172834246&t=board",
-      "sourceOrder": 40
+      "sourceOrder": 37
     },
     {
       "id": "172466664",
