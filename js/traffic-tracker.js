@@ -70,3 +70,140 @@
   };
   // URL에 실제 검색어가 없는 경우 브라우저에서 추측하거나 referrer로 조작하지 않습니다.
 })();
+
+
+
+/* 최초 확인 검색어 추가 수집 테스트 */
+(() => {
+  'use strict';
+
+  const tracker = window.AutoGenieTraffic;
+
+  if (!tracker || typeof tracker.getFields !== 'function') {
+    console.warn('유입 추적 객체를 찾지 못했습니다.');
+    return;
+  }
+
+  const originalGetFields = tracker.getFields.bind(tracker);
+
+  // 사이트별로 저장공간 분리
+  const STORAGE_KEY =
+    'autogenie_first_search_test_' + location.hostname;
+
+  const clean = value =>
+    String(value || '').trim().slice(0, 180);
+
+  const isKnown = value =>
+    !!value &&
+    !['미확인', 'unknown', 'not set', '(not set)']
+      .includes(value.toLowerCase());
+
+  function getReferrerKeyword() {
+    try {
+      if (!document.referrer) return null;
+
+      const url = new URL(document.referrer);
+      const host = url.hostname.toLowerCase();
+
+      // 네이버 검색 결과 페이지
+      if (/(^|\.)search\.naver\.com$/.test(host)) {
+        const term = clean(
+          url.searchParams.get('query') ||
+          url.searchParams.get('n_query')
+        );
+
+        if (isKnown(term)) {
+          return {
+            term,
+            type: 'naver_referrer_query'
+          };
+        }
+      }
+
+      // 구글 검색 결과 페이지
+      if (/(^|\.)google\./.test(host)) {
+        const term = clean(url.searchParams.get('q'));
+
+        if (isKnown(term)) {
+          return {
+            term,
+            type: 'google_referrer_query'
+          };
+        }
+      }
+    } catch (error) {
+      console.warn('검색어 분석 오류:', error);
+    }
+
+    return null;
+  }
+
+  const params = new URLSearchParams(location.search);
+  const naverQuery = clean(params.get('n_query'));
+
+  const referrerResult = getReferrerKeyword();
+  const existing = originalGetFields();
+
+  let first = null;
+
+  try {
+    first = JSON.parse(
+      localStorage.getItem(STORAGE_KEY) || 'null'
+    );
+  } catch (_) {}
+
+  // 최초로 확인된 검색어만 저장
+  if (!first || !isKnown(first.term)) {
+    const existingTerm = clean(existing.trafficSearchTerm);
+
+    if (isKnown(existingTerm)) {
+      first = {
+        term: existingTerm,
+        type: existing.trafficKeywordType ||
+          'previously_confirmed'
+      };
+    } else if (isKnown(naverQuery)) {
+      first = {
+        term: naverQuery,
+        type: 'actual_naver_query'
+      };
+    } else if (referrerResult) {
+      first = referrerResult;
+    }
+
+    if (first && isKnown(first.term)) {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(first)
+        );
+      } catch (_) {}
+    }
+  }
+
+  // 기존 데이터 전송 구조 유지
+  tracker.getFields = function () {
+    const fields = originalGetFields();
+
+    return {
+      ...fields,
+      trafficSearchTerm:
+        first?.term || fields.trafficSearchTerm || '미확인',
+      trafficKeywordType:
+        first?.type || fields.trafficKeywordType || 'unknown'
+    };
+  };
+
+  // F12 개발자도구 테스트용
+  tracker.getTestInfo = function () {
+    const fields = tracker.getFields();
+
+    return {
+      referrer: document.referrer || '없음',
+      nQuery: naverQuery || '없음',
+      referrerKeyword: referrerResult?.term || '미확인',
+      firstSearchKeyword: fields.trafficSearchTerm,
+      keywordType: fields.trafficKeywordType
+    };
+  };
+})();
