@@ -8601,6 +8601,75 @@ function paintSwatchStyle(paint) {
     showValidation("");
   }
 
+  // 기존 차단 이름/번호 규칙에 걸리는 경우에만 별도 경고문을 표시합니다.
+  function isBlockedEstimateIdentity(nameValue, phoneValue) {
+    const normalizedName = (nameValue || "").trim().toLowerCase().replace(/\s/g, "");
+    const blockedNames = [
+      "테스트", "홍길동", "아무개", "관리자", "운영자", "담당자",
+      "test", "tester", "admin", "administrator", "asdf", "qwer", "abc"
+    ];
+    const digits = (phoneValue || "").replace(/\D/g, "");
+    const subscriberNumber = digits.slice(digits.startsWith("02") ? 2 : 3);
+    const blockedNumbers = ["1234567", "7654321", "12341234", "12345678", "87654321"];
+    const middleNumber = subscriberNumber.slice(0, -4);
+    const lastNumber = subscriberNumber.slice(-4);
+    const isRepeatedGroup = number => number.length >= 3 && /^(\d)\1+$/.test(number);
+    return blockedNames.includes(normalizedName)
+      || blockedNumbers.includes(subscriberNumber)
+      || (isRepeatedGroup(middleNumber) && isRepeatedGroup(lastNumber));
+  }
+
+  const estimateBlockModal = document.getElementById("estimateBlockModal");
+  document.querySelectorAll("[data-estimate-block-close]").forEach(button => {
+    button.addEventListener("click", () => estimateBlockModal?.close());
+  });
+  // 차단 여부는 Google 시트의 방문자 ID 목록을 기준으로 확인합니다.
+  // 과거 테스트용 localStorage 플래그는 더 이상 접속 경고 판정에 사용하지 않습니다.
+  const ESTIMATE_BLOCK_BROWSER_KEY = "autogenie_estimate_blocked_browser_v1";
+  function rememberEstimateBlockedBrowser() {
+    // 구글 시트에 등록된 ID만 접속 경고 대상으로 삼습니다.
+  }
+  function showEstimateBlockedWarning() {
+    if (estimateBlockModal?.open) return;
+    if (estimateBlockModal?.showModal) estimateBlockModal.showModal();
+    else alert("견적 신청이 제한되었습니다. 동일한 허위 신청이 지속될 경우 법적 조치가 취해질 수 있습니다.");
+  }
+
+  // Apps Script 웹 앱은 외부 도메인 호출 시 CORS 제한이 있을 수 있어 JSONP를 사용합니다.
+  // 콜백은 구글 시트 내용이 아닌 {success, blocked}만 받습니다.
+  async function checkVisitorBlockOnEntry() {
+    if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes("여기에_")) return;
+    // 방문로그와 동일한 외부 IP 조회 함수를 사용합니다.
+    const ipAddress = await getPublicIpAddress();
+    if (!ipAddress || ipAddress === "조회 실패") return;
+    const callbackName = "agBlockCheck" + Math.random().toString(36).slice(2);
+    const script = document.createElement("script");
+    const url = new URL(GOOGLE_APPS_SCRIPT_URL);
+    url.searchParams.set("action", "check_visitor_block");
+    url.searchParams.set("ipAddress", ipAddress);
+    url.searchParams.set("callback", callbackName);
+    url.searchParams.set("_", String(Date.now()));
+    let settled = false;
+    const cleanup = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeoutId);
+      script.remove();
+      delete window[callbackName];
+    };
+    window[callbackName] = result => {
+      cleanup();
+      if (result && result.success === true && result.blocked === true) {
+        showEstimateBlockedWarning();
+      }
+    };
+    script.onerror = cleanup;
+    script.src = url.toString();
+    const timeoutId = setTimeout(cleanup, 12000);
+    document.head.appendChild(script);
+  }
+  checkVisitorBlockOnEntry();
+
   function isValidCustomerName(value) {
     const name = value.trim().replace(/\s+/g, " ");
     const normalizedName = name.toLowerCase().replace(/\s/g, "");
@@ -8734,6 +8803,12 @@ function paintSwatchStyle(paint) {
         return false;
       }
 
+      if (isBlockedEstimateIdentity(name.value, phone.value)) {
+        rememberEstimateBlockedBrowser();
+        showEstimateBlockedWarning();
+        return false;
+      }
+
       if (!isValidCustomerName(name.value)) {
         const message = "올바른 성함을 입력해 주세요.";
         setFieldError(name, nameError, message);
@@ -8820,6 +8895,7 @@ function paintSwatchStyle(paint) {
 
     const payload = buildEstimatePayload();
     const securityData = getAutojiniSecurityData();
+    const estimateIpAddress = await getPublicIpAddress();
 
     // Apps Script의 e.parameter에서 각 값을 안정적으로 읽을 수 있도록
     // application/x-www-form-urlencoded 형식으로 명시적으로 구성합니다.
@@ -8842,6 +8918,7 @@ function paintSwatchStyle(paint) {
 
       // 방문로그와 같은 방문자 ID로 고객이름을 연결합니다.
       visitorId: securityData.visitorId || "확인 불가",
+      ipAddress: estimateIpAddress,
       visitSessionId: getOrCreateAutojiniVisitSessionId(),
       elapsedSeconds: String(securityData.elapsedSeconds || 0),
       ...window.AutoGenieTraffic?.getFields()
