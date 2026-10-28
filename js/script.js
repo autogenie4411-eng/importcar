@@ -3,6 +3,49 @@
 
   const currentMonth = new Date().getMonth() + 1;
 
+  // 현재 월은 화면 렌더링 시마다 계산합니다.
+  // 탭을 오래 열어둔 상태에서 월이 바뀌어도 월별 할인 표시를 갱신합니다.
+  function getCurrentDiscountMonth() {
+    return new Date().getMonth() + 1;
+  }
+
+  function syncDisplayedDiscountMonths() {
+    const label = `${getCurrentDiscountMonth()}월 할인율`;
+
+    document.querySelectorAll(".monthly-discount-sticker").forEach((sticker) => {
+      const monthElement = sticker.querySelector(".monthly-discount-sticker__month");
+      if (monthElement) {
+        monthElement.textContent = label;
+      }
+
+      const rate = sticker.querySelector(".monthly-discount-sticker__rate")?.textContent?.trim();
+      if (rate) {
+        sticker.setAttribute("aria-label", `${label} 최대 ${rate}`);
+      }
+    });
+
+    document.querySelectorAll(".discount-rate dt").forEach((element) => {
+      element.textContent = label;
+    });
+  }
+
+  // 휴면 탭 복귀/브라우저 뒤로가기로 돌아오는 경우에도 최신 월을 표시합니다.
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      syncDisplayedDiscountMonths();
+    }
+  });
+  window.addEventListener("pageshow", syncDisplayedDiscountMonths);
+
+  // 페이지를 계속 열어둔 경우에는 매분 확인합니다.
+  window.setInterval(() => {
+    if (!document.hidden) {
+      syncDisplayedDiscountMonths();
+    }
+  }, 60 * 1000);
+
+
+
   function resetPageScroll() {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
@@ -7588,6 +7631,9 @@ function paintSwatchStyle(paint) {
     const paint = currentPaint();
     const paints = currentPaints();
     const useOwnBackground = Boolean(brand?.ownBackground && state.carName);
+    // 현재 월 기준 외장 색상 할인 안내 (최대 20%)
+    const discountMonth = getCurrentDiscountMonth();
+    const discountRate = 20;
 
     const carTitleMarkup = `<div class="wizard-car-title ${useOwnBackground ? "wizard-car-title--overlay" : ""}">
         <div>
@@ -7663,7 +7709,7 @@ function paintSwatchStyle(paint) {
         <div class="wizard-car-card car-adjust ${!state.carName ? "is-empty sequential-hidden" : ""} ${brand?.ownBackground ? "has-own-background" : ""} ${state.brandName === "테슬라" ? "is-tesla" : ""} ${state.brandName === "제네시스" ? "is-genesis" : ""} ${state.brandName === "기아" ? "is-kia" : ""} ${state.brandName === "기아" && state.carName === "봉고3" ? "is-kia-bongo3" : ""}" data-brand="${state.brandName || ""}" data-car="${state.carName || ""}">
           ${carImageMarkup}
 
-          <div class="paint-block ${!state.carName ? "is-disabled-block" : ""}" data-option-section="paint">
+          <div class="paint-block ${!state.carName ? "is-disabled-block" : "has-monthly-discount"}" data-option-section="paint">
             <div class="paint-label">
               <span class="paint-label-title"><b>3</b> 외장 색상${state.carName ? `<em>${paints.length}개</em>` : ""}</span>
               ${state.carName ? `<small class="paint-swipe-guide">좌우로 넘겨보세요</small>` : ""}
@@ -7679,6 +7725,16 @@ function paintSwatchStyle(paint) {
               </div>
               <div class="chosen-paint">
                 <strong>${paint ? paint.name : "색상을 선택해 주세요"}</strong>
+              </div>
+              <div class="monthly-discount-sticker" role="note" aria-label="${discountMonth}월 할인율 최대 ${discountRate}%">
+                <img class="monthly-discount-sticker__megaphone" src="images/discount-megaphone.png?v=20261028-match-ref-02" alt="" aria-hidden="true" width="52" height="64">
+                <div class="monthly-discount-sticker__pill">
+                  <span class="monthly-discount-sticker__month">${discountMonth}월 할인율</span>
+                  <div class="monthly-discount-sticker__details">
+                    <span class="monthly-discount-sticker__max">최대</span>
+                    <strong class="monthly-discount-sticker__rate">${discountRate}%</strong>
+                  </div>
+                </div>
               </div>
             ` : `<p class="empty-selection-guide">차량을 먼저 선택해 주세요.</p>`}
           </div>
