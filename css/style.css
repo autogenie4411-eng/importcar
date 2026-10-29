@@ -2693,15 +2693,19 @@ body:has(.wizard-page) {
     color: #2456c5;
     font-size: var(--font-size-base);
     position: relative;
+    /* 점 애니메이션이 줄 높이와 중앙 정렬을 바꾸지 않도록 공간만 확보 */
+    padding-right: 18px;
 }
 .loader-status:after {
-    vertical-align: bottom;
     content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
     width: 16px;
-    min-width: 16px;
-    margin-left: 2px;
+    height: 1em;
+    line-height: 1;
     animation: 1.1s steps(4, end) infinite loaderEllipsis;
-    display: inline-block;
+    display: block;
     white-space: nowrap;
     overflow: hidden;
 }
