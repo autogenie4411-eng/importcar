@@ -9559,3 +9559,71 @@ body.review-dialog-open {
     outline-offset: 3px;
     border-radius: 3px;
 }
+
+/* =========================================================
+   수입차 상단 배너 교체 (2026-11-05)
+   index.html의 data-hero-mode="event"   : 연말 이벤트 포스터
+   index.html의 data-hero-mode="original": 기존 차량/문구 배너
+   기존 .wizard-hero 및 이미지 경로를 보존하여 재사용 가능
+========================================================= */
+.wizard-event-banner {
+    display: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    background: #17193b;
+}
+.wizard-event-banner__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.wizard-page[data-hero-mode="event"] .wizard-hero {
+    display: none;
+}
+.wizard-page[data-hero-mode="event"] .wizard-event-banner {
+    display: block;
+}
+
+/* =========================================================
+   연말 이벤트 이미지 하단 혜택: 이미지가 아닌 실제 HTML 텍스트
+   원본 배너(.wizard-hero)는 유지하고 event 모드에서만 사용합니다.
+========================================================= */
+.wizard-event-banner {
+    position: relative;
+}
+.wizard-event-banner__benefits {
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    bottom: 8%;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin: 0;
+    color: #1b2338;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+}
+.wizard-event-banner__benefits p {
+    margin: 0;
+    padding: 0;
+}
+.wizard-event-banner__benefits strong {
+    color: #df1920;
+    font-weight: 800;
+}
+@media (max-width: 767px) {
+    .wizard-event-banner__benefits {
+        bottom: 9%;
+        gap: 2px;
+        font-size: 11px;
+    }
+}

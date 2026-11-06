@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261103-import-delivery-event-01">
+    <link rel="stylesheet" href="css/style.css?v=20261105-import-event-banner-text-final">
   <!-- 차량별 직접 링크는 준비 완료 전까지 로딩 커버를 유지합니다. -->
   <script>
     if (new URLSearchParams(location.search).has("car")) {
@@ -103,8 +103,8 @@
     </div>
   </aside>
 
-
-  <main class="wizard-page" id="top">
+  <!-- 상단 배너 전환: event(연말 이벤트) / original(기존 차량 배너) -->
+  <main class="wizard-page" id="top" data-hero-mode="original">
     <header class="wizard-header">
       <a class="brand-mark" href="#top" aria-label="오토지니 홈">
         <span class="brand-symbol">A</span>
@@ -126,6 +126,17 @@
       <span>초기비용 <span class="wizard-zero">0</span>원, 자동차세 <span class="wizard-zero">0</span>원, 보험료 <span class="wizard-zero">0</span>원</span>
       <div class="wizard-hero-visual" aria-hidden="true">
         <img src="images/car-img-bg.png?v=2" class="wizard-hero-visual__image" alt="수입 전기차">
+      </div>
+    </section>
+
+    <!-- 기존 .wizard-hero 및 수입차 차량 이미지 참조는 삭제하지 않았습니다. -->
+    <section class="wizard-event-banner" aria-label="연말 할인 이벤트">
+      <!-- 하단 혜택 문구는 포스터 이미지와 분리하여 HTML 텍스트로 관리합니다. -->
+      <img class="wizard-event-banner__image" src="images/car-event.webp" width="891" height="1180" fetchpriority="high" decoding="async"
+        alt="연말할인은 지금부터! 원하는 수입차와 조건을 한 번에 선택하세요. 최대 20% 할인.">
+      <div class="wizard-event-banner__benefits" aria-label="이벤트 혜택 안내">
+        <p>※ 견적 신청 시 <strong>최대 20% 할인</strong>된 금액을 받아 보실 수 있습니다!</p>
+        <p>※ 초기비용 <strong>0원</strong>, 자동차세 <strong>0원</strong>, 보험료 <strong>0원</strong></p>
       </div>
     </section>
 
@@ -382,7 +393,7 @@
 
   <!-- 수입차 트림 기능 자료: 이미지·설명·국내 적용 조건 76개 차종 등록 -->
   <script src="js/trim-reference-data.js?v=20261102-luxury-webp-04"></script>
-  <script src="js/script.js?v=20261104-deeplink-intro-fix-01"></script>
+  <script src="js/script.js?v=20261106-back-step-fix-02"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/reviews.js?v=20261022-review-full-ad-safe-v2"></script>
 

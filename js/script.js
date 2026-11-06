@@ -7392,6 +7392,9 @@ const vehicleCatalog = [
     submitted: false
   };
 
+  // 로고를 통한 초기화 시 브라우저 히스토리에 저장할 최초 견적 상태입니다.
+  const initialWizardState = { ...state };
+
   // Keep wizard transitions in the browser's session history.
   const wizardHistoryKey = "autogenieImportWizardV1";
   let wizardHistoryIndex = 0;
@@ -9811,17 +9814,17 @@ function paintSwatchStyle(paint) {
   });
 
   backButton.addEventListener("click", () => {
-    if (state.step > 1) {
-      if (wizardHistoryIndex > 0) {
-        window.history.back();
-        return;
-      }
-      const previousSnapshot = { ...state };
-      state.step -= 1;
-      recordWizardNavigation(previousSnapshot);
-      render();
-      scrollToEstimate();
-    }
+    if (state.step <= 1) return;
+
+    // 브라우저 방문 기록은 직전 '견적 단계'를 보장하지 않습니다.
+    // 특히 STEP 01·02의 [바로 견적신청]으로 STEP 04에 진입한 경우,
+    // history.back()은 STEP 01·02로 건너뛰므로 항상 한 단계만 이동합니다.
+    // 차량·트림·이용조건 등 기존 선택값은 그대로 유지합니다.
+    const previousSnapshot = { ...state };
+    state.step -= 1;
+    recordWizardNavigation(previousSnapshot);
+    render();
+    scrollToEstimate();
   });
 
   consultButton?.addEventListener("click", () => {
@@ -9880,10 +9883,22 @@ function paintSwatchStyle(paint) {
   const homeLogo = document.querySelector(".brand-mark");
   homeLogo?.addEventListener("click", event => {
     event.preventDefault();
-    // 로고 클릭은 스크롤 이동이 아닌 전체 견적 초기화입니다.
-    // 차량 딥링크(?car=...&brand=...)도 제거하고 처음 로딩 화면부터 재진입합니다.
-    // 기존 단계/선택/후기 상태는 새 페이지 로딩 시 초기값으로 복원됩니다.
-    window.location.replace(window.location.origin + window.location.pathname);
+
+    // 단순 새로고침만 하면 history.state에 기록된 이전 견적 단계가 복원됩니다.
+    // 저장된 현재 단계를 STEP 01의 완전한 초기 상태로 먼저 교체합니다.
+    Object.keys(state).forEach(key => { delete state[key]; });
+    Object.assign(state, initialWizardState);
+    wizardHistoryIndex = 0;
+
+    // 차량 직접 링크는 해제하되, 광고 유입 분석에 필요한 다른 파라미터는 유지합니다.
+    const homeUrl = new URL(window.location.href);
+    homeUrl.searchParams.delete("car");
+    homeUrl.searchParams.delete("brand");
+    homeUrl.hash = "";
+
+    window.history.replaceState(wizardHistoryEntry(0), "", homeUrl.href);
+    // 동일 주소라도 로딩 화면부터 다시 시작하도록 새로고침을 명시합니다.
+    window.location.reload();
   });
 
   // 차량별 광고 링크: ?car=모델명 또는 ?brand=브랜드명&car=모델명
